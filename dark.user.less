@@ -1,0 +1,406 @@
+/* ==UserStyle==
+@name         OneDrive After Dark
+@description  Finely tuned UserCSS dark theme for the OneDrive web app
+@namespace    https://github.com/stamminator
+@version      20240327.0
+@author       stamminator
+==/UserStyle== */
+
+@-moz-document domain("onedrive.live.com"), domain("photos.onedrive.com") {
+    
+}
+
+@-moz-document domain("onedrive.live.com") {
+    
+    body {
+        color: var(--text-light1) !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--text-light1) !important;
+    }
+
+    :root, * {
+        --us-bg: #202020;
+        --text-light1: var(--globalColorGrey92);
+        --text-light2: var(--globalColorGrey74);
+        --text-light3: var(--globalColorGrey55);
+
+        --globalColorBrand40: #0c3b5e;
+        --globalColorBrand60: #0f548c;
+        --globalColorBrand70: #115ea3;
+        --globalColorBrand80: #0f6cbd;
+        --globalColorBrand90: #2886de;
+        --globalColorBrand100: #479ef5;
+        --globalColorBrand130: #96c6fa;
+        --globalColorBrand140: #b4d6fa;
+        --globalColorBrand150: #cfe4fa;
+        --globalColorBrand160: #ebf3fc;
+        --globalColorGrey4: #121212;  // us
+        --globalColorGrey7: #1a1a1a;  // us
+        --globalColorGrey10: #202020; // us
+        --globalColorGrey14: #242424;
+        --globalColorGrey17: #2c2c2c; // us
+        --globalColorGrey20: #333333;
+        --globalColorGrey26: #424242;
+        --globalColorGrey38: #616161;
+        --globalColorGrey44: #707070;
+        --globalColorGrey50: #7d7d7d; // us
+        --globalColorGrey55: #8b8b8b; // us
+        --globalColorGrey60: #989898; // us
+        --globalColorGrey65: #a6a6a6; // us
+        --globalColorGrey70: #b3b3b3;
+        --globalColorGrey74: #bdbdbd;
+        --globalColorGrey78: #c7c7c7;
+        --globalColorGrey82: #d1d1d1;
+        --globalColorGrey84: #d6d6d6;
+        --globalColorGrey88: #e0e0e0;
+        --globalColorGrey92: #ebebeb;
+        --globalColorGrey94: #f0f0f0;
+        --globalColorGrey96: #f5f5f5;
+        --globalColorGrey98: #fafafa;
+        --globalColorBlackAlpha10: #0000001a;
+        --globalColorBlack: #000000;
+        --globalColorWhite: #ffffff;
+        --globalColorWhiteAlpha70: #ffffffb3;
+        --globalColorLightBlueTint30: #83bdeb;
+        --globalColorCranberryTint40: #eeacb2;
+        --globalColorCranberryTint60: #fdf3f4;
+
+        --borderRadiusCircular: 10000px;
+        --borderRadiusLarge: 6px;
+        --borderRadiusMedium: 4px;
+        --borderRadiusSmall: 2px;
+        --borderRadiusXLarge: 8px;
+        --colorBrandBackground: var(--globalColorBrand80);
+        --colorBrandBackground2: var(--globalColorBrand60);
+        --colorBrandBackground2Hover: var(--globalColorBrand40);
+        --colorBrandBackground2Pressed: var(--globalColorBrand70);
+        --colorBrandBackgroundHover: var(--globalColorBrand70);
+        --colorBrandBackgroundInvertedPressed: var(--globalColorBrand140);
+        --colorBrandForeground1: var(--globalColorBrand80);
+        --colorBrandForegroundLink: var(--globalColorBrand70);
+        --colorBrandForegroundLinkHover: var(--globalColorBrand60);
+        --colorBrandForegroundLinkPressed: var(--globalColorBrand40);
+        --colorBrandForegroundLinkSelected: var(--globalColorBrand80);
+        --colorCompoundBrandForeground1: var(--globalColorBrand80);
+        --colorCompoundBrandForeground1Hover: var(--globalColorBrand70);
+        --colorCompoundBrandForeground1Pressed: var(--globalColorBrand60);
+        --colorCompoundBrandStroke: var(--globalColorBrand80);
+        --colorCompoundBrandStrokeHover: var(--globalColorBrand70);
+        --colorCompoundBrandStrokePressed: var(--globalColorBrand60);
+        --colorNeutralBackground1: var(--globalColorWhite);
+        --colorNeutralBackground10: #28abf503;
+        --colorNeutralBackground11: #0000000a;
+        --colorNeutralBackground12: #0000000c;
+        --colorNeutralBackground13: #00000028;
+        --colorNeutralBackground14: #00000014;
+        --colorNeutralBackground15: #d2d5d6;
+        --colorNeutralBackground16: #c9c6d0;
+        --colorNeutralBackground17: #cecbd5;
+        --colorNeutralBackground18: #cdd0d1;
+        --colorNeutralBackground19: #e0e0e057;
+        --colorNeutralBackground1Hover: var(--globalColorGrey96);
+        --colorNeutralBackground1Pressed: var(--globalColorGrey88);
+        --colorNeutralBackground2: var(--globalColorGrey98);
+        --colorNeutralBackground3: var(--globalColorGrey96);
+        --colorNeutralBackground3Hover: var(--globalColorGrey20);
+        --colorNeutralBackground3Pressed: var(--globalColorGrey84);
+        --colorNeutralBackground4: var(--globalColorGrey94);
+        --colorNeutralBackground5: var(--globalColorGrey92);
+        --colorNeutralBackground5Hover: var(--globalColorGrey96);
+        --colorNeutralBackground5Pressed: var(--globalColorGrey94);
+        --colorNeutralBackground6: #ffffff33;
+        --colorNeutralBackground7: #ffffff4d;
+        --colorNeutralBackground8: #ffffff66;
+        --colorNeutralBackground9: #7c55ce0f;
+        --colorNeutralBackgroundAlpha3Hover: #0000000f;
+        --colorNeutralBackgroundDisabled: var(--globalColorGrey94);
+        --colorNeutralBackgroundStatic: var(--globalColorGrey20);
+        --colorNeutralDarkBackgroundAlpha3Pressed: var(--globalColorBlackAlpha10);
+        --colorNeutralForeground1: var(--globalColorGrey98);
+        --colorNeutralForeground2: var(--globalColorGrey78);
+        --colorNeutralForeground2BrandHover: var(--globalColorBrand80);
+        --colorNeutralForeground2BrandPressed: var(--globalColorBrand90);
+        --colorNeutralForeground2Hover: var(--globalColorGrey14);
+        --colorNeutralForeground2Pressed: var(--globalColorGrey14);
+        --colorNeutralForeground3: var(--globalColorGrey38);
+        --colorNeutralForeground3Hover: var(--globalColorGrey26);
+        --colorNeutralForeground4: var(--globalColorGrey44);
+        --colorNeutralForegroundDisabled: var(--globalColorGrey74);
+        --colorNeutralForegroundInverted: var(--globalColorWhite);
+        --colorNeutralForegroundInvertedLink: var(--globalColorWhite);
+        --colorNeutralForegroundOnBrand: var(--globalColorWhite);
+        --colorNeutralStroke1: var(--globalColorGrey82);
+        --colorNeutralStroke1Hover: var(--globalColorGrey78);
+        --colorNeutralStroke1Pressed: var(--globalColorGrey70);
+        --colorNeutralStroke2: var(--globalColorGrey88);
+        --colorNeutralStroke3: var(--globalColorGrey94);
+        --colorNeutralStrokeAccessibleSelected: var(--globalColorBrand80);
+        --colorNeutralStrokeDisabled: var(--globalColorGrey88);
+        --colorStrokeFocus2: var(--globalColorBlack);
+        --colorStrokeFocus3: #0000000d;
+        --colorSubtleBackgroundLightAlphaHover: var(--globalColorWhiteAlpha70);
+        --colorTransparentBackground: transparent;
+        --colorTransparentStroke: transparent;
+        --fontSizeBase100: 10px;
+        --fontSizeBase200: 12px;
+        --fontSizeBase300: 14px;
+        --fontSizeBase400: 16px;
+        --fontSizeBase500: 20px;
+        --fontWeightRegular: 400;
+        --fontWeightSemibold: 600;
+        --lineHeightBase300: 20px;
+        --lineHeightBase500: 28px;
+
+        --od3-row-divider: #333 !important;
+        --od3-row-inset-background: var(--globalColorGrey14) !important;
+
+        --ms-palette-neutralPrimary: var(--text-light1);
+        --ms-semanticColors-bodyBackground: var(--globalColorGrey10);
+    }
+
+    :root,
+    [data-theme="fluent-light"],
+    [data-theme="fluent-dark"] {
+        --pageBackgroundGradientColorStop1: rgb(36, 36, 36);
+        --pageBackgroundGradientColorStop2: rgb(32, 32, 32);
+        --pageBackgroundGradientColorStop3: rgb(28, 28, 28);
+    }
+
+    // Header
+    #O365_NavHeader {
+        background-color: var(--globalColorGrey4);
+        
+        .o365cs-base,
+        .o365sx-appName,
+        .o365sx-waffle {
+            color: var(--globalColorGrey88);
+
+            &:hover {
+                background-color: var(--globalColorGrey14);
+            }
+        }
+
+        .o365sx-activeButton {
+            background-color: var(--globalColorGrey17);
+        }
+
+        .o365sx-searchBoxInactive,
+        .o365sx-searchBoxActive {
+            color: var(--globalColorGrey26);
+            background-color: var(--globalColorGrey94);
+        }
+    }
+
+    #O365_UniversalMeContainer:hover {
+        background-color: var(--globalColorGrey14);
+    }
+
+    #mectrl_main_body,
+    .mectrl_body,
+    #mectrl_body_signOut 
+    {
+        background-color: var(--globalColorGrey7);
+        color: var(--text-light2)
+    }
+
+    .mectrl_accountList,
+    #mectrl_body_signOut:hover {
+        background-color: var(--globalColorGrey14);
+    }
+
+    // Popup search
+    [id^='ms-searchux-popup-']
+    {
+        &,
+        #file,
+        ul[class^='group-'],
+        ul[class^='group-'] > li,
+        [class^='suggestionContainer-'],
+        [class^='submitSuggestion-']
+        {
+            color: var(--globalColorGrey50) !important;
+            background-color: var(--globalColorGrey17);
+        }
+
+        [class^='noWrap-'] {
+            color: var(--globalColorGrey50) !important;
+        }
+
+        [class^='suggestionContainer-'],
+        [class^='submitSuggestion-']
+        {
+            &:hover {
+                background-color: var(--globalColorGrey26);
+            }
+        }
+
+        [class^='suggestionIconWrapper-'] {
+            &,
+            [class^='icon-'] {
+                color: var(--globalColorGrey96);
+            }
+        }
+
+    }
+
+
+    // Left nav
+    #spartan-left-nav,
+    [class^='navGroup_'],
+    //[class^='navLinkInner_'],
+    //[class^='navIcon_'],
+    [class^='quotaBarHeader_']
+    {
+        color: var(--text-light1) !important;
+    }
+
+    #spartan-left-nav.odsp-spartan-nav-expanded {
+        background-color: var(--globalColorGrey14);
+    }
+
+    [class^='navLink_'] {
+        color: var(--text-light2);
+
+        &:hover {
+            &::before,
+            [class^='navLinkInner_'] {
+                background-color: var(--globalColorGrey26) !important;
+            }
+
+            a {
+                color: var(--text-light1) !important;
+            }
+        }
+    }
+
+    // App launcher
+    .o365cs-base {
+        .o365sx-neutral-foreground-background, 
+        .o365sx-neutral-foreground-hover-background:hover {
+            background-color: var(--globalColorGrey4);
+        }
+
+        .o365sx-neutral-dark-font,
+        .o365sx-neutral-dark-hover-font:hover {
+            color: var(--text-light2);
+        }
+
+        [id^='O365_AppTile_'],
+        [id^='intentTile_']
+        {
+            &:hover {
+                border-color: var(--globalColorGrey17) !important;
+                background-color: var(--globalColorGrey14);
+            }
+            
+            &:active {
+                border-color: var(--globalColorGrey20) !important;
+                background-color: var(--globalColorGrey17);
+            }
+        }
+
+        #appLauncherSearchWrapper {
+            &:hover::before {
+                color: transparent;
+            }
+
+            &:focus-within::before {
+                color: var(--colorCompoundBrandStroke)
+            }
+        }
+    }
+
+
+    // Files list
+    .ms-DetailsList 
+    {
+        &,
+        .ms-DetailsHeader,
+        .ms-DetailsHeader-cell,
+        .ms-DetailsRow 
+        {
+            color: var(--text-light1) !important;
+            background-color: var(--globalColorGrey4) !important;
+            border-color: #333 !important;
+
+            &:hover {
+                box-shadow: none !important;
+            }
+        }
+    }
+
+    .ms-DetailsRow-cell {
+        [class*='fieldText_'] {
+            color: var(--text-light2) !important;
+        }
+
+        [class*='nameField_'] {
+            color: var(--text-light1) !important;
+        }
+    }
+
+
+    // Buttons
+    [class^='actionRow_'] [data-id='filterPivot'] button:active {
+        background-color: var(--colorBrandBackground2Pressed);
+    }
+
+    [class^='navButton_'] {
+        background-color: transparent;
+    }
+
+    // Carousel
+    [class^='carouselList_'] [class^='tileViewport_']
+    {
+        background-color: var(--globalColorGrey4);
+
+        [class^='itemActivity_'] * {
+            color: var(--text-light2) !important;
+        }
+    }
+
+    // Miscellaneous Icons
+    [class*='iconClassName-'] {
+        color: var(--text-light2) !important;
+    }
+
+    // [class^='navLinkInner_'],
+    // [class^='navLink_']:hover,
+    // [class^='navLink_']:hover::before,
+    // [class^='navLink_']:hover a
+    // {
+    //     color: var(--text-light1) !important;
+    //     background-color: var(--globalColorGrey20) !important;
+    // }
+
+
+    // /* Navbar */
+    // [class^='legacySearchWrapper_'] div,
+
+    // /* Left Bar*/
+    // [class^='topBar_'] div,
+    // [class^='odLeftNavInline_'],
+
+    // /* Main View */
+
+    // [class^='root_']
+    // /* Buttons */
+    // /* button,
+    // .bolt-button {
+    //     background-color: #202020 !important;
+    //     color: #dcddde !important;
+    //     border-color: #444 !important;
+    // } */
+
+    // /* Search Bar */
+    // /* .ms-suiteux-search-box input,
+    // .ms-suiteux-search-box input::placeholder {
+    //     border-radius: 8px !important;
+    //     padding-left: 12px !important;
+    //     color: #dcddde !important;
+    //     background-color: #313039 !important;
+    // } */
+    //     {}
+}
