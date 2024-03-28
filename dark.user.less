@@ -114,7 +114,7 @@
         --colorNeutralBackground7: #ffffff4d;
         --colorNeutralBackground8: #ffffff66;
         --colorNeutralBackground9: #7c55ce0f;
-        --colorNeutralBackgroundAlpha3Hover: #0000000f;
+        --colorNeutralBackgroundAlpha3Hover: rgba(0, 0, 0, 0.2);
         --colorNeutralBackgroundDisabled: var(--globalColorGrey94);
         --colorNeutralBackgroundStatic: var(--globalColorGrey20);
         --colorNeutralDarkBackgroundAlpha3Pressed: var(--globalColorBlackAlpha10);
@@ -202,7 +202,7 @@
     #mectrl_body_signOut 
     {
         background-color: var(--globalColorGrey7);
-        color: var(--text-light2)
+        color: var(--text-light1)
     }
 
     .mectrl_accountList,
@@ -261,7 +261,7 @@
     }
 
     [class^='navLink_'] {
-        color: var(--text-light2);
+        color: var(--text-light1);
 
         &:hover {
             &::before,
@@ -284,15 +284,20 @@
 
         .o365sx-neutral-dark-font,
         .o365sx-neutral-dark-hover-font:hover {
-            color: var(--text-light2);
+            color: var(--text-light1);
         }
 
         [id^='O365_AppTile_'],
         [id^='intentTile_']
         {
             &:hover {
-                border-color: var(--globalColorGrey17) !important;
-                background-color: var(--globalColorGrey14);
+                &,
+                .o365sx-neutral-foreground-background,
+                .o365sx-neutral-foreground-hover-background:hover {
+                    border-color: var(--globalColorGrey17) !important;
+                    background-color: var(--globalColorGrey14) !important;
+                    box-shadow: none !important;
+                }
             }
             
             &:active {
@@ -316,24 +321,21 @@
     // Files list
     .ms-DetailsList 
     {
-        &,
-        .ms-DetailsHeader,
-        .ms-DetailsHeader-cell,
-        .ms-DetailsRow 
+        &, *:not(i)
         {
             color: var(--text-light1) !important;
             background-color: var(--globalColorGrey4) !important;
             border-color: #333 !important;
+        }
 
-            &:hover {
-                box-shadow: none !important;
-            }
+        .ms-DetailsRow:hover {
+            box-shadow: none !important;
         }
     }
 
     .ms-DetailsRow-cell {
         [class*='fieldText_'] {
-            color: var(--text-light2) !important;
+            color: var(--text-light1) !important;
         }
 
         [class*='nameField_'] {
@@ -347,9 +349,55 @@
         background-color: var(--colorBrandBackground2Pressed);
     }
 
-    [class^='navButton_'] {
-        background-color: transparent;
+    [class^='carouselTopNav_'] {
+        background-color: transparent !important;
     }
+
+    [class^='navButton_'] {
+
+        &,
+        .ms-Icon {
+            color: var(--text-light2);
+            background-color: var(--globalColorGrey7);
+        }
+
+        &:hover:not(:disabled) {
+            &,
+            .ms-Icon {
+                color: var(--text-light1);
+                background-color: var(--globalColorGrey4);
+            }
+        }
+
+        &:disabled {
+            opacity: 0.45;
+            color: var(--text-light1);
+            background-color: var(--globalColorGrey7);
+        }
+    }
+
+    .ms-Button {
+        color: var(--text-light1);
+
+        &:hover {
+            &,
+            .ms-Button-menuIcon {
+                color: var(--text-light1);
+            }
+        }
+    }
+
+
+    // Breadcrumbs
+    .ms-Breadcrumb-item,
+    .ms-Breadcrumb-itemLink {
+        color: var(--text-light1) !important;
+    }
+
+    .ms-Breadcrumb-chevron {
+        color: var(--text-light3) !important;
+    }
+
 
     // Carousel
     [class^='carouselList_'] [class^='tileViewport_']
@@ -357,13 +405,52 @@
         background-color: var(--globalColorGrey4);
 
         [class^='itemActivity_'] * {
-            color: var(--text-light2) !important;
+            color: var(--text-light1) !important;
         }
     }
 
+
+    // Callout (context menu)
+    .ms-Callout,
+    .ms-Callout-main,
+    .ms-ContextualMenu,
+    .ms-ContextualMenu-link
+    {
+        color: var(--text-light2) !important;
+        background-color: var(--globalColorGrey7);
+    }
+
+    .ms-ContextualMenu-itemText {
+        color: var(--text-light2) !important;
+    }
+
+    .ms-ContextualMenu-link:hover
+    {
+        background-color: var(--globalColorGrey14) !important;
+
+        .ms-ContextualMenu-itemText {
+            //color: var(--text-light2) !important;
+        }
+    }
+
+    .ms-ContextualMenu-checkmarkIcon {
+        color: var(--text-light1) !important;
+    }
+
+    .ms-ContextualMenu-divider {
+        background-color: var(--globalColorGrey26);
+    }
+
+
     // Miscellaneous Icons
     [class*='iconClassName-'] {
-        color: var(--text-light2) !important;
+        color: var(--text-light1) !important;
+    }
+
+    [class*='sortIcon-'],
+    [class*='filterChevron-']
+    {
+        color: var(--text-light3) !important;
     }
 
     // [class^='navLinkInner_'],

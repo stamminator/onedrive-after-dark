@@ -110,7 +110,7 @@
     --colorNeutralBackground7: #ffffff4d;
     --colorNeutralBackground8: #ffffff66;
     --colorNeutralBackground9: #7c55ce0f;
-    --colorNeutralBackgroundAlpha3Hover: #0000000f;
+    --colorNeutralBackgroundAlpha3Hover: rgba(0, 0, 0, 0.2);
     --colorNeutralBackgroundDisabled: var(--globalColorGrey94);
     --colorNeutralBackgroundStatic: var(--globalColorGrey20);
     --colorNeutralDarkBackgroundAlpha3Pressed: var(--globalColorBlackAlpha10);
@@ -188,7 +188,7 @@
   .mectrl_body,
   #mectrl_body_signOut {
     background-color: var(--globalColorGrey7);
-    color: var(--text-light2);
+    color: var(--text-light1);
   }
   .mectrl_accountList,
   #mectrl_body_signOut:hover {
@@ -223,7 +223,7 @@
     background-color: var(--globalColorGrey14);
   }
   [class^='navLink_'] {
-    color: var(--text-light2);
+    color: var(--text-light1);
   }
   [class^='navLink_']:hover::before,
   [class^='navLink_']:hover [class^='navLinkInner_'] {
@@ -238,12 +238,17 @@
   }
   .o365cs-base .o365sx-neutral-dark-font,
   .o365cs-base .o365sx-neutral-dark-hover-font:hover {
-    color: var(--text-light2);
+    color: var(--text-light1);
   }
   .o365cs-base [id^='O365_AppTile_']:hover,
-  .o365cs-base [id^='intentTile_']:hover {
+  .o365cs-base [id^='intentTile_']:hover,
+  .o365cs-base [id^='O365_AppTile_']:hover .o365sx-neutral-foreground-background,
+  .o365cs-base [id^='intentTile_']:hover .o365sx-neutral-foreground-background,
+  .o365cs-base [id^='O365_AppTile_']:hover .o365sx-neutral-foreground-hover-background:hover,
+  .o365cs-base [id^='intentTile_']:hover .o365sx-neutral-foreground-hover-background:hover {
     border-color: var(--globalColorGrey17) !important;
-    background-color: var(--globalColorGrey14);
+    background-color: var(--globalColorGrey14) !important;
+    box-shadow: none !important;
   }
   .o365cs-base [id^='O365_AppTile_']:active,
   .o365cs-base [id^='intentTile_']:active {
@@ -257,21 +262,16 @@
     color: var(--colorCompoundBrandStroke);
   }
   .ms-DetailsList,
-  .ms-DetailsList .ms-DetailsHeader,
-  .ms-DetailsList .ms-DetailsHeader-cell,
-  .ms-DetailsList .ms-DetailsRow {
+  .ms-DetailsList *:not(i) {
     color: var(--text-light1) !important;
     background-color: var(--globalColorGrey4) !important;
     border-color: #333 !important;
   }
-  .ms-DetailsList:hover,
-  .ms-DetailsList .ms-DetailsHeader:hover,
-  .ms-DetailsList .ms-DetailsHeader-cell:hover,
   .ms-DetailsList .ms-DetailsRow:hover {
     box-shadow: none !important;
   }
   .ms-DetailsRow-cell [class*='fieldText_'] {
-    color: var(--text-light2) !important;
+    color: var(--text-light1) !important;
   }
   .ms-DetailsRow-cell [class*='nameField_'] {
     color: var(--text-light1) !important;
@@ -279,16 +279,68 @@
   [class^='actionRow_'] [data-id='filterPivot'] button:active {
     background-color: var(--colorBrandBackground2Pressed);
   }
-  [class^='navButton_'] {
-    background-color: transparent;
+  [class^='carouselTopNav_'] {
+    background-color: transparent !important;
+  }
+  [class^='navButton_'],
+  [class^='navButton_'] .ms-Icon {
+    color: var(--text-light2);
+    background-color: var(--globalColorGrey7);
+  }
+  [class^='navButton_']:hover:not(:disabled),
+  [class^='navButton_']:hover:not(:disabled) .ms-Icon {
+    color: var(--text-light1);
+    background-color: var(--globalColorGrey4);
+  }
+  [class^='navButton_']:disabled {
+    opacity: 0.45;
+    color: var(--text-light1);
+    background-color: var(--globalColorGrey7);
+  }
+  .ms-Button {
+    color: var(--text-light1);
+  }
+  .ms-Button:hover,
+  .ms-Button:hover .ms-Button-menuIcon {
+    color: var(--text-light1);
+  }
+  .ms-Breadcrumb-item,
+  .ms-Breadcrumb-itemLink {
+    color: var(--text-light1) !important;
+  }
+  .ms-Breadcrumb-chevron {
+    color: var(--text-light3) !important;
   }
   [class^='carouselList_'] [class^='tileViewport_'] {
     background-color: var(--globalColorGrey4);
   }
   [class^='carouselList_'] [class^='tileViewport_'] [class^='itemActivity_'] * {
+    color: var(--text-light1) !important;
+  }
+  .ms-Callout,
+  .ms-Callout-main,
+  .ms-ContextualMenu,
+  .ms-ContextualMenu-link {
+    color: var(--text-light2) !important;
+    background-color: var(--globalColorGrey7);
+  }
+  .ms-ContextualMenu-itemText {
     color: var(--text-light2) !important;
   }
+  .ms-ContextualMenu-link:hover {
+    background-color: var(--globalColorGrey14) !important;
+  }
+  .ms-ContextualMenu-checkmarkIcon {
+    color: var(--text-light1) !important;
+  }
+  .ms-ContextualMenu-divider {
+    background-color: var(--globalColorGrey26);
+  }
   [class*='iconClassName-'] {
-    color: var(--text-light2) !important;
+    color: var(--text-light1) !important;
+  }
+  [class*='sortIcon-'],
+  [class*='filterChevron-'] {
+    color: var(--text-light3) !important;
   }
 }
