@@ -2,7 +2,7 @@
 @name         OneDrive After Dark
 @description  Finely tuned UserCSS dark theme for the OneDrive web app
 @namespace    https://github.com/stamminator
-@version      20240327.0
+@version      20240328.0
 @author       stamminator
 ==/UserStyle== */
 
@@ -18,6 +18,14 @@
 
     h1, h2, h3, h4, h5, h6 {
         color: var(--text-light1) !important;
+    }
+
+    dt {
+        color: var(--text-light3) !important;
+    }
+
+    dd {
+        color: var(--text-light2) !important;
     }
 
     :root, * {
@@ -276,10 +284,15 @@
     }
 
     // App launcher
-    .o365cs-base {
+    #appLauncher {
         .o365sx-neutral-foreground-background, 
         .o365sx-neutral-foreground-hover-background:hover {
             background-color: var(--globalColorGrey4);
+        }
+
+        .o365sx-neutral-light-background,
+        .o365cs-base .o365sx-neutral-light-hover-background:hover {
+            background-color: var(--globalColorGrey17);
         }
 
         .o365sx-neutral-dark-font,
@@ -318,29 +331,118 @@
     }
 
 
-    // Files list
+    // Settings pane
+    #O365fpcontainerid,
+    #flexPaneScrollRegion,
+    #flexPaneScrollRegion > div,
+    #FlexPane_Settings {
+        color: var(--text-light2) !important;
+        background-color: var(--globalColorGrey7) !important;
+        border-color: var(--globalColorGrey4) !important;
+
+        .o365sx-neutral-accent-link {
+            color: var(--text-light2) !important;
+        }
+    }
+
+    #flexPaneCloseButton {
+        color: var(--text-light2) !important;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2) !important;
+        }
+    }
+
+
+    // Panes
+    .od-DetailsPane,
+    .ms-ScrollablePane,
+    .ms-ScrollablePane--contentContainer
+    {
+        color: var(--text-light2) !important;
+        background-color: var(--globalColorGrey10) !important;
+    }
+
+    [class^='od-DetailsPane-'] {
+        background-color: var(--globalColorGrey10) !important;
+        color: var(--text-light2) !important;
+
+        &[class*='-header'] {
+            background-color: var(--globalColorGrey7) !important;
+        }
+    }
+
+    .InfoPane-section {
+        background-color: var(--globalColorGrey10) !important;
+        color: var(--text-light2) !important;
+    }
+
+
+    // Sharing section
+    .od-SharingSection-PermissionsPile {
+        background-color: var(--globalColorGrey10) !important;
+        color: var(--text-light2) !important;
+    }
+
+
+    // Lists
     .ms-DetailsList 
     {
-        &, *:not(i)
+        &,
+        .ms-DetailsHeader,
+        .ms-DetailsHeader-cell,
+        .ms-DetailsRow,
+        .ms-Shimmer-container,
+        .ms-Shimmer-container *
         {
             color: var(--text-light1) !important;
             background-color: var(--globalColorGrey4) !important;
             border-color: #333 !important;
+
+            &:hover {
+                box-shadow: none !important;
+            }
         }
 
-        .ms-DetailsRow:hover {
-            box-shadow: none !important;
+        .ms-DetailsRow {
+            //border-image: linear-gradient(to right, transparent 56px, #333 56px, #333 calc(100% - 8px), transparent calc(100% - 8px)) 0 0 1 / 1 / 0 stretch;
+            &:hover, &.is-selected {
+                box-shadow: var(--globalColorGrey4) !important;
+                --od3-row-divider: var(--globalColorGrey4) !important;
+
+                &::before {
+                    background-color: var(--globalColorGrey14) !important;
+                }
+            }
         }
     }
 
     .ms-DetailsRow-cell {
-        [class*='fieldText_'] {
-            color: var(--text-light1) !important;
-        }
-
+        [class*='fieldText_'],
         [class*='nameField_'] {
             color: var(--text-light1) !important;
         }
+    }
+
+    .odsp-spartan-list {
+        &,
+        [class*='odlistContent_'],
+        [class*='odlistHeaderRow_'],
+        [class*='row_']
+        {
+            background-color: var(--globalColorGrey4) !important;
+            border-color: #333 !important;
+        }
+    }
+
+    .od-ItemActivityList-activity {
+        color: var(--text-light2) !important;
+        background-color: var(--globalColorGrey4) !important;
+    }
+
+    .od-ItemActivity-item-nameText,
+    .od-ItemActivity-item-textContent {
+        color: var(--text-light3) !important;
     }
 
 
@@ -354,7 +456,6 @@
     }
 
     [class^='navButton_'] {
-
         &,
         .ms-Icon {
             color: var(--text-light2);
@@ -377,13 +478,40 @@
     }
 
     .ms-Button {
-        color: var(--text-light1);
+        color: var(--text-light1) !important;
 
         &:hover {
             &,
             .ms-Button-menuIcon {
-                color: var(--text-light1);
+                color: var(--text-light1) !important;
             }
+        }
+
+        &[class*='heroButton_'],
+        &.od-DetailsPane-PrimaryPane-header-close {
+            &:hover:not(.is-disabled) {
+                background-color: var(--colorNeutralBackgroundAlpha3Hover) !important;
+            }
+        }
+    }
+
+
+    // Dialogs
+    .od-Dialog-content {
+        color: var(--text-light2) !important;
+        background-color: var(--globalColorGrey20) !important;
+    }
+
+    .od-Dialog-title {
+        color: var(--text-light1) !important;
+    }
+
+    .od-Dialog-button {
+        color: var(--text-light2) !important;
+
+        &:hover,
+        &:active {
+            background-color: rgba(0, 0, 0, 0.2) !important;
         }
     }
 
@@ -399,6 +527,24 @@
     }
 
 
+    // Command Bar
+    [class^='commandBar_'][class*='hasSelection_']
+    {
+        .ms-CommandBar, 
+        [class^='commandbar_']
+        {
+            background-color: var(--globalColorGrey4) !important;
+    
+            .ms-Button:hover:not(.is-disabled) {
+                > .ms-Button-flexContainer {
+                    background-color: var(--globalColorGrey10) !important;
+                }
+            }
+        }
+    }
+
+
+
     // Carousel
     [class^='carouselList_'] [class^='tileViewport_']
     {
@@ -412,6 +558,7 @@
 
     // Callout (context menu)
     .ms-Callout,
+    .ms-Callout-beak,
     .ms-Callout-main,
     .ms-ContextualMenu,
     .ms-ContextualMenu-link
@@ -453,41 +600,57 @@
         color: var(--text-light3) !important;
     }
 
-    // [class^='navLinkInner_'],
-    // [class^='navLink_']:hover,
-    // [class^='navLink_']:hover::before,
-    // [class^='navLink_']:hover a
-    // {
-    //     color: var(--text-light1) !important;
-    //     background-color: var(--globalColorGrey20) !important;
-    // }
 
+    // Storage options
+    .isOD3 .StorageOptions.StorageOptions--cards,
+    .isOD3 .StorageOptions.StorageOptions--slider,
+    .isOD3 .StorageOptions-top,
+    .isOD3 .StorageOptions-header,
+    .isOD3 .StorageOptions-title,
+    .isOD3 .StorageOptions-newPage-currentPlan-label,
+    .isOD3 .StorageOptions-currentStorage-label,
+    .od-StorageAddOnTileContainer,
+    .od-StorageAddOnTileContainer .header,
+    .od-StorageAddOnTileContainer .description
+    {
+        color: var(--text-light2) !important;
+    }
 
-    // /* Navbar */
-    // [class^='legacySearchWrapper_'] div,
+    .od-PlanCardTest,
+    .od-PlanCardTest-secondaryHeader,
+    .od-PostPurchasePlansPage-featureListHeader,
+    .od-PlanCardTest-featureListItemText
+    {
+        color: var(--text-light2) !important;
+        background-color: var(--globalColorGrey4) !important;
+    }
 
-    // /* Left Bar*/
-    // [class^='topBar_'] div,
-    // [class^='odLeftNavInline_'],
+    .od-PostPurchasePlansPage-listBlock,
+    .od-PlanCardTest-titleSeparator  {
+        border-color: var(--globalColorGrey17) !important;
+    }
 
-    // /* Main View */
+    .od-PlanCardTest-appsIncluded {
+        color: var(--colorBrandForegroundLink) !important;
+    }
 
-    // [class^='root_']
-    // /* Buttons */
-    // /* button,
-    // .bolt-button {
-    //     background-color: #202020 !important;
-    //     color: #dcddde !important;
-    //     border-color: #444 !important;
-    // } */
+    .od-StorageAddOnTileContainer {
+        .storageAddOnTile {
+            &,
+            .price,
+            .description {
+                color: var(--text-light2) !important;
+                background-color: var(--globalColorGrey4) !important;
+            }
 
-    // /* Search Bar */
-    // /* .ms-suiteux-search-box input,
-    // .ms-suiteux-search-box input::placeholder {
-    //     border-radius: 8px !important;
-    //     padding-left: 12px !important;
-    //     color: #dcddde !important;
-    //     background-color: #313039 !important;
-    // } */
-    //     {}
+            .line {
+                background-color: var(--globalColorGrey17);
+            }
+        }
+
+        .disclaimer {
+            color: var(--text-light3) !important;
+        }
+    }
+
 }
