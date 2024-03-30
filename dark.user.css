@@ -2,7 +2,7 @@
 @name         OneDrive After Dark
 @description  Finely tuned UserCSS dark theme for the OneDrive web app
 @namespace    https://github.com/stamminator
-@version      20240329.0
+@version      20240330.0
 @author       stamminator
 ==/UserStyle== */
 @-moz-document domain("onedrive.live.com"), domain("photos.onedrive.com"), url-prefix("https://www.odwebp.svc.ms/share") {
@@ -44,6 +44,9 @@
   :root {
     --buttonHoverBackgroundAlpha: rgba(0, 0, 0, 0.25);
   }
+  html body .ms-fontColor-neutralSecondary {
+    color: #989898;
+  }
   .ms-Button,
   .ms-Button i {
     color: #ebebeb !important;
@@ -64,11 +67,20 @@
     background-color: transparent !important;
     border-color: #a6a6a6 !important;
   }
-  .ms-Button.ms-Button--default:hover {
+  .ms-Button.ms-Button--default:hover:not(.is-disabled) {
     background-color: var(--buttonHoverBackgroundAlpha) !important;
   }
-  .ms-Button.ms-Button--primary:hover {
-    background-color: #106EBE !important;
+  .ms-Button.ms-Button--primary:hover:not(.is-disabled) {
+    background-color: #0f66b0 !important;
+  }
+  .ms-Button.is-disabled {
+    opacity: 0.25;
+  }
+  .od-Panel-button--close {
+    color: #bdbdbd;
+  }
+  .od-Panel-button--close:hover {
+    background-color: var(--buttonHoverBackgroundAlpha);
   }
   .ms-TextField {
     background-color: #f0f0f0 !important;
@@ -324,6 +336,48 @@
   #mectrl_body_signOut:hover {
     background-color: #242424;
   }
+  .OneUp.OneUp--newDesignedCommandBar {
+    background-color: #202020;
+  }
+  .OneUp-content,
+  .OneUp-content [class*='Content_'] {
+    background-color: #202020 !important;
+  }
+  .OneUp-content [class*='bottomToolArea_'] [role='menubar'] {
+    background-color: #2c2c2c !important;
+    border-color: #616161 !important;
+  }
+  .OneUp-content [class*='bottomToolArea_'] [role='menubar'] .ms-Button {
+    background-color: #2c2c2c !important;
+  }
+  .OneUp-content [class*='bottomToolArea_'] [role='menubar'] .ms-Button:hover:not(.is-disabled) {
+    background-color: var(--buttonHoverBackgroundAlpha) !important;
+  }
+  .OneUp-content [class*='bottomToolArea_'] [role='menubar'] [class*='pagination_'] {
+    color: #bdbdbd !important;
+  }
+  .OneUp-content [class*='bottomToolArea_'] [role='menubar'] [class*='keyword_'] > [class*='result_'] {
+    color: #bdbdbd !important;
+  }
+  .OneUp-commandBar {
+    background-color: #121212 !important;
+    border-color: #121212 !important;
+  }
+  .OneUp-commandBar .ms-Button {
+    --buttonHoverBackgroundAlpha: rgba(255, 255, 255, 0.07) !important;
+  }
+  .OneUp-commandBar .ms-Button:hover:not(.is-disabled) > .ms-Button-flexContainer {
+    background-color: var(--buttonHoverBackgroundAlpha);
+  }
+  .OneUp-commandBar .ms-Button.od-Command--PrimaryButton:hover {
+    background-color: #0f66b0 !important;
+  }
+  .OneUp-commandBar .ms-Button .ms-Button-menuIcon {
+    background-color: transparent;
+  }
+  .OneUp-commandBar .ms-Button.od-Command--fileTitle {
+    opacity: 1;
+  }
   [id^='ms-searchux-popup-'],
   [id^='ms-searchux-popup-'] #file,
   [id^='ms-searchux-popup-'] ul[class^='group-'],
@@ -417,7 +471,8 @@
   }
   .od-DetailsPane,
   .ms-ScrollablePane,
-  .ms-ScrollablePane--contentContainer {
+  .ms-ScrollablePane--contentContainer,
+  .od-Panel {
     color: #bdbdbd !important;
     background-color: #202020 !important;
   }

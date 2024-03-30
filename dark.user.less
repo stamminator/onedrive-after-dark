@@ -2,11 +2,11 @@
 @name         OneDrive After Dark
 @description  Finely tuned UserCSS dark theme for the OneDrive web app
 @namespace    https://github.com/stamminator
-@version      20240329.0
+@version      20240330.0
 @author       stamminator
 ==/UserStyle== */
 
-
+@primaryButtonBackground: #0f66b0;
 
 @colorBrand40: #0c3b5e;
 @colorBrand60: #0f548c;
@@ -124,6 +124,11 @@
     // MICROSOFT COMMON COMPONENTS //
     /////////////////////////////////
 
+    // Text
+    html body .ms-fontColor-neutralSecondary {
+        color: @colorGrey60;
+    }
+
     // Buttons
     .ms-Button {
         &, i {
@@ -154,15 +159,27 @@
             background-color: transparent !important;
             border-color: @colorGrey65 !important;
 
-            &:hover {
+            &:hover:not(.is-disabled) {
                 background-color: var(--buttonHoverBackgroundAlpha) !important;
             }
         }
 
         &.ms-Button--primary {
-            &:hover {
-                background-color: #106EBE !important;
+            &:hover:not(.is-disabled) {
+                background-color: @primaryButtonBackground !important;
             }
+        }
+
+        &.is-disabled {
+            opacity: 0.25;
+        }
+    }
+
+    .od-Panel-button--close {
+        color: @text-light2;
+
+        &:hover {
+            background-color: var(--buttonHoverBackgroundAlpha);
         }
     }
 
@@ -396,8 +413,6 @@
             border-bottom: 1px solid @colorGrey50;
         }
     }
-
-    
 }
 
 
@@ -521,6 +536,66 @@
         background-color: @colorGrey14;
     }
 
+
+    // OneUp command bar
+    .OneUp.OneUp--newDesignedCommandBar {
+        background-color: @colorGrey10;
+    }
+
+    .OneUp-content {
+        &,
+        [class*='Content_'] {
+            background-color: @colorGrey10 !important;
+        }
+
+        [class*='bottomToolArea_'] [role='menubar'] {
+            background-color: @colorGrey17 !important;
+            border-color: @colorGrey38 !important;
+
+            .ms-Button {
+                background-color: @colorGrey17 !important;
+
+                &:hover:not(.is-disabled) {
+                    background-color: var(--buttonHoverBackgroundAlpha) !important;
+                }
+            }
+
+            [class*='pagination_'] {
+                color: @text-light2 !important;
+            }
+
+            [class*='keyword_'] > [class*='result_'] {
+                color: @text-light2 !important;
+            }
+        }
+    }
+
+    .OneUp-commandBar {
+        background-color: @colorGrey4 !important;
+        border-color: @colorGrey4 !important;
+
+        .ms-Button {
+            --buttonHoverBackgroundAlpha: fade(#fff, 7%) !important;
+
+            &:hover:not(.is-disabled) > .ms-Button-flexContainer {
+                background-color: var(--buttonHoverBackgroundAlpha);
+            }
+
+            &.od-Command--PrimaryButton:hover {
+                background-color: @primaryButtonBackground !important;
+            }
+
+            .ms-Button-menuIcon {
+                background-color: transparent;
+            }
+
+            &.od-Command--fileTitle {
+                opacity: 1;
+            }
+        }
+    }
+
+
     // Popup search
     [id^='ms-searchux-popup-']
     {
@@ -560,8 +635,6 @@
     // Left nav
     #spartan-left-nav,
     [class^='navGroup_'],
-    //[class^='navLinkInner_'],
-    //[class^='navIcon_'],
     [class^='quotaBarHeader_']
     {
         color: @text-light1 !important;
@@ -660,7 +733,8 @@
     // Panes
     .od-DetailsPane,
     .ms-ScrollablePane,
-    .ms-ScrollablePane--contentContainer
+    .ms-ScrollablePane--contentContainer,
+    .od-Panel
     {
         color: @text-light2 !important;
         background-color: @colorGrey10 !important;
@@ -808,25 +882,12 @@
         background-color: var(--buttonHoverBackgroundAlpha);
     }
 
-
-    // Text fields
-    // .od-addNewCommentTextField-mentionableTextBox-outer,
-    // .od-addNewCommentTextField-mentionableTextBox
-    // {
-    //     background-color: @colorGrey26 !important;
-    //     color: @text-light1 !important;
-    // }
-
-    // .od-addNewCommentTextField-mentionableTextBox[placeholder]:empty:before {
-    //     color: @text-light2 !important;
-    // }
-
     .od-Caption-textField {
         background-color: transparent !important;
     }
 
 
-    // Dialogs (see Microsoft Common Components section for similarities)
+    // Dialogs
     .od-Dialog-content
     {
         color: @text-light2 !important;
@@ -864,7 +925,6 @@
             }
         }
     }
-
 
 
     // Carousel
