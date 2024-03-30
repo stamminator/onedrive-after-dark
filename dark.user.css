@@ -2,9 +2,30 @@
 @name         OneDrive After Dark
 @description  Finely tuned UserCSS dark theme for the OneDrive web app
 @namespace    https://github.com/stamminator
-@version      20240330.1
+@version      20240330.2
 @author       stamminator
 ==/UserStyle== */
+#appRoot > .od-FilePickerApp,
+#appRoot > .od-FilePickerApp .od-FilePicker,
+#appRoot > .od-FilePickerApp .od-FilePicker-tray {
+  background-color: #2c2c2c;
+}
+#appRoot > .od-FilePickerApp [class^='navPane_'] {
+  background-color: #2c2c2c;
+  border-color: #2c2c2c;
+}
+#appRoot > .od-FilePickerApp [class^='navPane_'] .ms-Button.ms-Nav-link {
+  background-color: transparent !important;
+  --buttonHoverBackgroundAlpha: rgba(255, 255, 255, 0.07);
+}
+#appRoot > .od-FilePickerApp [class^='navPane_'] .ms-Button.ms-Nav-link:not(.is-disabled):hover,
+#appRoot > .od-FilePickerApp [class^='navPane_'] .ms-Button.ms-Nav-link:not(.is-disabled):active {
+  background-color: var(--buttonHoverBackgroundAlpha) !important;
+}
+#appRoot > .od-FilePickerApp .od-FilePicker-tray {
+  background-color: #2c2c2c;
+  border-color: #2c2c2c;
+}
 @-moz-document domain("onedrive.live.com"), domain("photos.onedrive.com"), url-prefix("https://www.odwebp.svc.ms/share") {
   body {
     color: #ebebeb !important;
@@ -115,6 +136,13 @@
   .ms-Dialog-button:hover,
   .ms-Dialog-button:active {
     background-color: var(--buttonHoverBackgroundAlpha) !important;
+  }
+  [data-automationid="msFluentToast"][role='alert'][class*='root-'] {
+    background-color: #121212 !important;
+    --buttonHoverBackgroundAlpha: rgba(255, 255, 255, 0.07) !important;
+  }
+  i[data-icon-name="SyncStatusSolid"] {
+    line-height: 1;
   }
   .ms-Pivot-link:hover {
     background-color: #0000001a;
@@ -521,7 +549,10 @@
   .od-DetailsPane,
   .ms-ScrollablePane,
   .ms-ScrollablePane--contentContainer,
-  .od-Panel {
+  .od-Panel,
+  .ms-Panel-main,
+  .ms-Panel-commands,
+  .ms-Panel-headerText {
     color: #bdbdbd !important;
     background-color: #202020 !important;
   }
@@ -542,6 +573,12 @@
   }
   .od-FolderCoverTile-image {
     background-color: #616161 !important;
+  }
+  .ms-ProgressIndicator-itemName {
+    color: #bdbdbd;
+  }
+  .ms-ProgressIndicator-itemDescription {
+    color: #8b8b8b;
   }
   .od-SharingSection-PermissionsPile {
     background-color: #202020 !important;

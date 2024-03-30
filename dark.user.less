@@ -2,7 +2,7 @@
 @name         OneDrive After Dark
 @description  Finely tuned UserCSS dark theme for the OneDrive web app
 @namespace    https://github.com/stamminator
-@version      20240330.1
+@version      20240330.2
 @author       stamminator
 ==/UserStyle== */
 
@@ -74,6 +74,38 @@
 @text-light1: @colorGrey92;
 @text-light2: @colorGrey74;
 @text-light3: @colorGrey55;
+
+
+// File picker
+#appRoot > .od-FilePickerApp {
+    &,
+    .od-FilePicker,
+    .od-FilePicker-tray {
+        background-color: @colorGrey17;
+    }
+
+    [class^='navPane_'] {
+        background-color: @colorGrey17;
+        border-color: @colorGrey17;
+
+        .ms-Button.ms-Nav-link {
+            background-color: transparent !important;
+            --buttonHoverBackgroundAlpha: fade(#fff, 7%);
+
+            &:not(.is-disabled) {
+                &:hover,
+                &:active {
+                    background-color: var(--buttonHoverBackgroundAlpha) !important;
+                }
+            }
+        }
+    }
+
+    .od-FilePicker-tray {
+        background-color: @colorGrey17;
+        border-color: @colorGrey17;
+    }
+}
 
 @-moz-document domain("onedrive.live.com"), domain("photos.onedrive.com"), url-prefix("https://www.odwebp.svc.ms/share")
 {
@@ -230,6 +262,17 @@
         }
     }
 
+
+    // Toast
+    [data-automationid="msFluentToast"][role='alert'][class*='root-']
+    {
+        background-color: @colorGrey4 !important;
+        --buttonHoverBackgroundAlpha: fade(#fff, 7%) !important;
+    }
+
+    i[data-icon-name="SyncStatusSolid"] {
+        line-height: 1;
+    }
 
     // Pivot (tabs)
     .ms-Pivot-link:hover {
@@ -791,7 +834,10 @@
     .od-DetailsPane,
     .ms-ScrollablePane,
     .ms-ScrollablePane--contentContainer,
-    .od-Panel
+    .od-Panel,
+    .ms-Panel-main,
+    .ms-Panel-commands,
+    .ms-Panel-headerText
     {
         color: @text-light2 !important;
         background-color: @colorGrey10 !important;
@@ -819,6 +865,16 @@
 
     .od-FolderCoverTile-image {
         background-color: @colorGrey38 !important;
+    }
+
+
+    // Progress indicator
+    .ms-ProgressIndicator-itemName {
+        color: @text-light2;
+    }
+
+    .ms-ProgressIndicator-itemDescription {
+        color: @text-light3;
     }
 
 
