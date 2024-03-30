@@ -2,7 +2,7 @@
 @name         OneDrive After Dark
 @description  Finely tuned UserCSS dark theme for the OneDrive web app
 @namespace    https://github.com/stamminator
-@version      20240330.0
+@version      20240330.1
 @author       stamminator
 ==/UserStyle== */
 
@@ -536,10 +536,50 @@
         background-color: @colorGrey14;
     }
 
+    .playback-button() { // mixin
+        color: @text-light2 !important;
+
+        border-radius: 4px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            background-color: fade(#fff, 7%) !important;
+        }
+    }
 
     // OneUp command bar
     .OneUp.OneUp--newDesignedCommandBar {
         background-color: @colorGrey10;
+    }
+
+    .od-VolumeMenu
+    {
+        color: @text-light2;
+        border-radius: 6px;
+        border-color: #000;
+        background-color: #222 !important;
+    }
+
+    .od-VolumeMenu-button {
+        .playback-button();
+    }
+
+    .od-VolumeMenu-scrubFill {
+        background-color: @colorGrey44;
+    }
+    
+    .od-VolumeMenu-scrubThumb::after {
+        top: -2px;
+        box-sizing: content-box;
+        border-radius: 8px;
+        border: 2px solid #eee;
+        background-color: #eee;
+    }
+
+    .od-VolumeMenu-scrubArea:active .od-VolumeMenu-scrubThumb::after {
+        background-color: @colorGrey44;
     }
 
     .OneUp-content {
@@ -567,6 +607,23 @@
             [class*='keyword_'] > [class*='result_'] {
                 color: @text-light2 !important;
             }
+        }
+
+        .OneUp-caption-container,
+        .od-PlaybackPanel,
+        .od-PlaybackPanel-timePlayed,
+        .od-PlaybackPanel-totalTime
+        {
+            background-color: fade(@colorGrey4, 90%) !important;
+            color: @text-light2 !important;
+        }
+
+        .OneUp-caption {
+            color: @text-light2 !important;
+        }
+
+        .od-PlaybackPanel-button {
+            .playback-button();
         }
     }
 

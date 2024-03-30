@@ -2,7 +2,7 @@
 @name         OneDrive After Dark
 @description  Finely tuned UserCSS dark theme for the OneDrive web app
 @namespace    https://github.com/stamminator
-@version      20240330.0
+@version      20240330.1
 @author       stamminator
 ==/UserStyle== */
 @-moz-document domain("onedrive.live.com"), domain("photos.onedrive.com"), url-prefix("https://www.odwebp.svc.ms/share") {
@@ -339,6 +339,35 @@
   .OneUp.OneUp--newDesignedCommandBar {
     background-color: #202020;
   }
+  .od-VolumeMenu {
+    color: #bdbdbd;
+    border-radius: 6px;
+    border-color: #000;
+    background-color: #222 !important;
+  }
+  .od-VolumeMenu-button {
+    color: #bdbdbd !important;
+    border-radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .od-VolumeMenu-button:hover {
+    background-color: rgba(255, 255, 255, 0.07) !important;
+  }
+  .od-VolumeMenu-scrubFill {
+    background-color: #707070;
+  }
+  .od-VolumeMenu-scrubThumb::after {
+    top: -2px;
+    box-sizing: content-box;
+    border-radius: 8px;
+    border: 2px solid #eee;
+    background-color: #eee;
+  }
+  .od-VolumeMenu-scrubArea:active .od-VolumeMenu-scrubThumb::after {
+    background-color: #707070;
+  }
   .OneUp-content,
   .OneUp-content [class*='Content_'] {
     background-color: #202020 !important;
@@ -358,6 +387,26 @@
   }
   .OneUp-content [class*='bottomToolArea_'] [role='menubar'] [class*='keyword_'] > [class*='result_'] {
     color: #bdbdbd !important;
+  }
+  .OneUp-content .OneUp-caption-container,
+  .OneUp-content .od-PlaybackPanel,
+  .OneUp-content .od-PlaybackPanel-timePlayed,
+  .OneUp-content .od-PlaybackPanel-totalTime {
+    background-color: rgba(18, 18, 18, 0.9) !important;
+    color: #bdbdbd !important;
+  }
+  .OneUp-content .OneUp-caption {
+    color: #bdbdbd !important;
+  }
+  .OneUp-content .od-PlaybackPanel-button {
+    color: #bdbdbd !important;
+    border-radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .OneUp-content .od-PlaybackPanel-button:hover {
+    background-color: rgba(255, 255, 255, 0.07) !important;
   }
   .OneUp-commandBar {
     background-color: #121212 !important;
