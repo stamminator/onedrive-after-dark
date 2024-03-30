@@ -2,12 +2,12 @@
 @name         OneDrive After Dark
 @description  Finely tuned UserCSS dark theme for the OneDrive web app
 @namespace    https://github.com/stamminator
-@version      20240328.0
+@version      20240329.0
 @author       stamminator
 ==/UserStyle== */
-@-moz-document domain("onedrive.live.com") {
+@-moz-document domain("onedrive.live.com"), domain("photos.onedrive.com"), url-prefix("https://www.odwebp.svc.ms/share") {
   body {
-    color: var(--text-light1) !important;
+    color: #ebebeb !important;
   }
   h1,
   h2,
@@ -15,149 +15,24 @@
   h4,
   h5,
   h6 {
-    color: var(--text-light1) !important;
+    color: #ebebeb !important;
   }
   dt {
-    color: var(--text-light3) !important;
+    color: #8b8b8b !important;
   }
   dd {
-    color: var(--text-light2) !important;
+    color: #bdbdbd !important;
   }
   :root,
   * {
-    --us-bg: #202020;
-    --text-light1: var(--globalColorGrey92);
-    --text-light2: var(--globalColorGrey74);
-    --text-light3: var(--globalColorGrey55);
-    --globalColorBrand40: #0c3b5e;
-    --globalColorBrand60: #0f548c;
-    --globalColorBrand70: #115ea3;
-    --globalColorBrand80: #0f6cbd;
-    --globalColorBrand90: #2886de;
-    --globalColorBrand100: #479ef5;
-    --globalColorBrand130: #96c6fa;
-    --globalColorBrand140: #b4d6fa;
-    --globalColorBrand150: #cfe4fa;
-    --globalColorBrand160: #ebf3fc;
-    --globalColorGrey4: #121212;
-    --globalColorGrey7: #1a1a1a;
-    --globalColorGrey10: #202020;
-    --globalColorGrey14: #242424;
-    --globalColorGrey17: #2c2c2c;
-    --globalColorGrey20: #333333;
-    --globalColorGrey26: #424242;
-    --globalColorGrey38: #616161;
-    --globalColorGrey44: #707070;
-    --globalColorGrey50: #7d7d7d;
-    --globalColorGrey55: #8b8b8b;
-    --globalColorGrey60: #989898;
-    --globalColorGrey65: #a6a6a6;
-    --globalColorGrey70: #b3b3b3;
-    --globalColorGrey74: #bdbdbd;
-    --globalColorGrey78: #c7c7c7;
-    --globalColorGrey82: #d1d1d1;
-    --globalColorGrey84: #d6d6d6;
-    --globalColorGrey88: #e0e0e0;
-    --globalColorGrey92: #ebebeb;
-    --globalColorGrey94: #f0f0f0;
-    --globalColorGrey96: #f5f5f5;
-    --globalColorGrey98: #fafafa;
-    --globalColorBlackAlpha10: #0000001a;
-    --globalColorBlack: #000000;
-    --globalColorWhite: #ffffff;
-    --globalColorWhiteAlpha70: #ffffffb3;
-    --globalColorLightBlueTint30: #83bdeb;
-    --globalColorCranberryTint40: #eeacb2;
-    --globalColorCranberryTint60: #fdf3f4;
-    --borderRadiusCircular: 10000px;
-    --borderRadiusLarge: 6px;
-    --borderRadiusMedium: 4px;
-    --borderRadiusSmall: 2px;
-    --borderRadiusXLarge: 8px;
-    --colorBrandBackground: var(--globalColorBrand80);
-    --colorBrandBackground2: var(--globalColorBrand60);
-    --colorBrandBackground2Hover: var(--globalColorBrand40);
-    --colorBrandBackground2Pressed: var(--globalColorBrand70);
-    --colorBrandBackgroundHover: var(--globalColorBrand70);
-    --colorBrandBackgroundInvertedPressed: var(--globalColorBrand140);
-    --colorBrandForeground1: var(--globalColorBrand80);
-    --colorBrandForegroundLink: var(--globalColorBrand70);
-    --colorBrandForegroundLinkHover: var(--globalColorBrand60);
-    --colorBrandForegroundLinkPressed: var(--globalColorBrand40);
-    --colorBrandForegroundLinkSelected: var(--globalColorBrand80);
-    --colorCompoundBrandForeground1: var(--globalColorBrand80);
-    --colorCompoundBrandForeground1Hover: var(--globalColorBrand70);
-    --colorCompoundBrandForeground1Pressed: var(--globalColorBrand60);
-    --colorCompoundBrandStroke: var(--globalColorBrand80);
-    --colorCompoundBrandStrokeHover: var(--globalColorBrand70);
-    --colorCompoundBrandStrokePressed: var(--globalColorBrand60);
-    --colorNeutralBackground1: var(--globalColorWhite);
-    --colorNeutralBackground10: #28abf503;
-    --colorNeutralBackground11: #0000000a;
-    --colorNeutralBackground12: #0000000c;
-    --colorNeutralBackground13: #00000028;
-    --colorNeutralBackground14: #00000014;
-    --colorNeutralBackground15: #d2d5d6;
-    --colorNeutralBackground16: #c9c6d0;
-    --colorNeutralBackground17: #cecbd5;
-    --colorNeutralBackground18: #cdd0d1;
-    --colorNeutralBackground19: #e0e0e057;
-    --colorNeutralBackground1Hover: var(--globalColorGrey96);
-    --colorNeutralBackground1Pressed: var(--globalColorGrey88);
-    --colorNeutralBackground2: var(--globalColorGrey98);
-    --colorNeutralBackground3: var(--globalColorGrey96);
-    --colorNeutralBackground3Hover: var(--globalColorGrey20);
-    --colorNeutralBackground3Pressed: var(--globalColorGrey84);
-    --colorNeutralBackground4: var(--globalColorGrey94);
-    --colorNeutralBackground5: var(--globalColorGrey92);
-    --colorNeutralBackground5Hover: var(--globalColorGrey96);
-    --colorNeutralBackground5Pressed: var(--globalColorGrey94);
-    --colorNeutralBackground6: #ffffff33;
-    --colorNeutralBackground7: #ffffff4d;
-    --colorNeutralBackground8: #ffffff66;
-    --colorNeutralBackground9: #7c55ce0f;
-    --colorNeutralBackgroundAlpha3Hover: rgba(0, 0, 0, 0.2);
-    --colorNeutralBackgroundDisabled: var(--globalColorGrey94);
-    --colorNeutralBackgroundStatic: var(--globalColorGrey20);
-    --colorNeutralDarkBackgroundAlpha3Pressed: var(--globalColorBlackAlpha10);
-    --colorNeutralForeground1: var(--globalColorGrey98);
-    --colorNeutralForeground2: var(--globalColorGrey78);
-    --colorNeutralForeground2BrandHover: var(--globalColorBrand80);
-    --colorNeutralForeground2BrandPressed: var(--globalColorBrand90);
-    --colorNeutralForeground2Hover: var(--globalColorGrey14);
-    --colorNeutralForeground2Pressed: var(--globalColorGrey14);
-    --colorNeutralForeground3: var(--globalColorGrey38);
-    --colorNeutralForeground3Hover: var(--globalColorGrey26);
-    --colorNeutralForeground4: var(--globalColorGrey44);
-    --colorNeutralForegroundDisabled: var(--globalColorGrey74);
-    --colorNeutralForegroundInverted: var(--globalColorWhite);
-    --colorNeutralForegroundInvertedLink: var(--globalColorWhite);
-    --colorNeutralForegroundOnBrand: var(--globalColorWhite);
-    --colorNeutralStroke1: var(--globalColorGrey82);
-    --colorNeutralStroke1Hover: var(--globalColorGrey78);
-    --colorNeutralStroke1Pressed: var(--globalColorGrey70);
-    --colorNeutralStroke2: var(--globalColorGrey88);
-    --colorNeutralStroke3: var(--globalColorGrey94);
-    --colorNeutralStrokeAccessibleSelected: var(--globalColorBrand80);
-    --colorNeutralStrokeDisabled: var(--globalColorGrey88);
-    --colorStrokeFocus2: var(--globalColorBlack);
-    --colorStrokeFocus3: #0000000d;
-    --colorSubtleBackgroundLightAlphaHover: var(--globalColorWhiteAlpha70);
-    --colorTransparentBackground: transparent;
-    --colorTransparentStroke: transparent;
-    --fontSizeBase100: 10px;
-    --fontSizeBase200: 12px;
-    --fontSizeBase300: 14px;
-    --fontSizeBase400: 16px;
-    --fontSizeBase500: 20px;
-    --fontWeightRegular: 400;
-    --fontWeightSemibold: 600;
-    --lineHeightBase300: 20px;
-    --lineHeightBase500: 28px;
+    --colorBrandForegroundLinkSelected: #0f6cbd;
+    --colorNeutralBackgroundAlpha3Hover: rgba(0, 0, 0, 0.25);
+    --colorNeutralForeground1: #ebebeb;
+    --colorNeutralForeground2: #bdbdbd;
     --od3-row-divider: #333 !important;
-    --od3-row-inset-background: var(--globalColorGrey14) !important;
-    --ms-palette-neutralPrimary: var(--text-light1);
-    --ms-semanticColors-bodyBackground: var(--globalColorGrey10);
+    --od3-row-inset-background: rgba(40, 134, 222, 0.25) !important;
+    --ms-palette-neutralPrimary: #ebebeb;
+    --ms-semanticColors-bodyBackground: #202020;
   }
   :root,
   [data-theme="fluent-light"],
@@ -166,8 +41,257 @@
     --pageBackgroundGradientColorStop2: #202020;
     --pageBackgroundGradientColorStop3: #1c1c1c;
   }
+  :root {
+    --buttonHoverBackgroundAlpha: rgba(0, 0, 0, 0.25);
+  }
+  .ms-Button,
+  .ms-Button i {
+    color: #ebebeb !important;
+  }
+  .ms-Button:hover,
+  .ms-Button:hover .ms-Button-menuIcon {
+    color: #ebebeb !important;
+  }
+  .ms-Button:hover:not(.is-disabled) {
+    background-color: var(--buttonHoverBackgroundAlpha);
+  }
+  .ms-Button.ms-Button--command:hover,
+  .ms-Button.ms-Button--commandBar:hover {
+    background-color: transparent !important;
+  }
+  .ms-Button.ms-Button--default {
+    color: #bdbdbd;
+    background-color: transparent !important;
+    border-color: #a6a6a6 !important;
+  }
+  .ms-Button.ms-Button--default:hover {
+    background-color: var(--buttonHoverBackgroundAlpha) !important;
+  }
+  .ms-Button.ms-Button--primary:hover {
+    background-color: #106EBE !important;
+  }
+  .ms-TextField {
+    background-color: #f0f0f0 !important;
+    color: #000000 !important;
+  }
+  .ms-TextField-fieldGroup,
+  input.ms-TextField-field,
+  textarea.ms-TextField-field,
+  .ms-BasePicker-input {
+    background-color: #ebebeb !important;
+    color: #000000 !important;
+    border-radius: 4px;
+  }
+  .ms-TextField-fieldGroup::placeholder,
+  input.ms-TextField-field::placeholder,
+  textarea.ms-TextField-field::placeholder,
+  .ms-BasePicker-input::placeholder {
+    color: #707070 !important;
+  }
+  .ms-Dialog-main,
+  .ms-Dialog-content,
+  .ms-Dialog-subText {
+    color: #bdbdbd !important;
+    background-color: #333333 !important;
+  }
+  .ms-Dialog-title {
+    color: #ebebeb !important;
+  }
+  .ms-Dialog-button {
+    color: #bdbdbd !important;
+  }
+  .ms-Dialog-button:hover,
+  .ms-Dialog-button:active {
+    background-color: var(--buttonHoverBackgroundAlpha) !important;
+  }
+  .ms-Pivot-link:hover {
+    background-color: #0000001a;
+  }
+  .ms-Breadcrumb-item,
+  .ms-Breadcrumb-itemLink {
+    color: #ebebeb !important;
+  }
+  .ms-Breadcrumb-chevron {
+    color: #8b8b8b !important;
+  }
+  .ms-Suggestions-item,
+  .ms-Suggestions-itemButton {
+    color: #bdbdbd;
+    background-color: #2c2c2c;
+  }
+  .ms-Suggestions-item:hover,
+  .ms-Suggestions-itemButton:hover {
+    background-color: #242424 !important;
+  }
+  .ms-Suggestions-item.is-suggested,
+  .ms-Suggestions-itemButton.is-suggested {
+    background-color: #202020 !important;
+  }
+  .ms-Suggestions-item .ms-Persona-primaryText:hover,
+  .ms-Suggestions-itemButton .ms-Persona-primaryText:hover {
+    color: #ebebeb;
+  }
+  .ms-Dropdown-item {
+    color: #bdbdbd;
+    background-color: #2c2c2c;
+  }
+  .ms-Dropdown-item:hover {
+    background-color: #242424 !important;
+  }
+  .ms-PickerPersona-container {
+    color: #bdbdbd;
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+  }
+  .ms-PickerPersona-container:hover {
+    cursor: pointer;
+    background-color: #121212;
+  }
+  .ms-PickerPersona-container.is-selected,
+  .ms-PickerPersona-container.is-selected:hover {
+    background-color: #121212;
+    border-color: var(--colorBrandForegroundLink);
+  }
+  .ms-PickerPersona-container .ms-PickerItem-content.ms-Button--icon:hover {
+    background-color: #333333;
+  }
+  .ms-Persona-primaryText {
+    color: #ebebeb;
+  }
+  .ms-Persona-primaryText:hover {
+    color: #ebebeb;
+  }
+  .ms-Persona-secondaryText {
+    color: #bdbdbd;
+  }
+  .ms-Persona-tertiaryText {
+    color: #8b8b8b;
+  }
+  .ms-Callout,
+  .ms-Callout-beak,
+  .ms-Callout-beakCurtain,
+  .ms-Callout-main,
+  .ms-ContextualMenu,
+  .ms-ContextualMenu-link {
+    color: #bdbdbd !important;
+    background-color: #1a1a1a !important;
+    border-color: #242424;
+  }
+  .ms-ContextualMenu-itemText {
+    color: #bdbdbd !important;
+  }
+  .ms-ContextualMenu-secondaryText {
+    color: #8b8b8b !important;
+  }
+  .ms-ContextualMenu-link:hover {
+    background-color: #242424 !important;
+  }
+  .ms-ContextualMenu-link .ms-ContextualMenu-icon {
+    color: inherit;
+  }
+  .ms-ContextualMenu-checkmarkIcon {
+    color: #ebebeb !important;
+  }
+  .ms-ContextualMenu-divider {
+    background-color: #424242;
+  }
+  .ms-Tooltip-content,
+  .ms-Tooltip-subText {
+    color: #bdbdbd !important;
+  }
+  .ms-DatePicker {
+    background-color: #1a1a1a;
+  }
+  .ms-DatePicker [class*='monthAndYear-'] {
+    color: #bdbdbd;
+  }
+  .ms-DatePicker [class*='monthComponents-'] button {
+    color: #bdbdbd;
+  }
+  .ms-DatePicker [class*='monthComponents-'] button:hover {
+    background-color: #242424;
+  }
+  .ms-DatePicker [class*='monthComponents-'] button[class*='disabledStyle'] {
+    color: #424242;
+  }
+  .ms-DatePicker [class*='dayCell-'] {
+    color: #ebebeb;
+  }
+  .ms-DatePicker [class*='dayCell-'].ms-CalendarDay-hoverStyle {
+    background-color: #333333;
+  }
+  .ms-DatePicker [class*='dayCell-'][class*='daySelected-'] {
+    background-color: #333333 !important;
+    border-color: #fafafa;
+  }
+  .ms-DatePicker [class*='dayOutsideBounds-'] button {
+    color: #616161;
+  }
+  .ms-DatePicker th[class*='dayCell-'] {
+    cursor: default;
+    border-bottom: 1px solid #7d7d7d;
+  }
+}
+@-moz-document url-prefix("https://www.odwebp.svc.ms/share") {
+  #odc-share-root,
+  .od-Share,
+  .od-ShareMain-section {
+    background-color: #202020 !important;
+    color: #bdbdbd !important;
+  }
+  .od-ShareHintDetail-statusText,
+  .od-ShareHintDetail-statusText * {
+    color: var(--colorNeutralForegroundInvertedLink) !important;
+  }
+  .od-RoleSelectorCompact-permissionButton {
+    background-color: inherit;
+    color: inherit;
+  }
+  .od-ShareLinkDescription-label {
+    color: #bdbdbd !important;
+  }
+  .od-ShareLinkDescription-detailText {
+    color: #8b8b8b !important;
+  }
+  .od-ExpirationDatePicker-delete {
+    color: #bdbdbd;
+  }
+  .od-RoleSelectorLarge-rolesDropdown .ms-Dropdown-title,
+  .od-ExpirationDatePicker-content,
+  .od-PasswordField .od-ShareLink-passwordFieldContent {
+    border-bottom-color: transparent;
+  }
+  .od-PasswordField .ms-TextField {
+    padding: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .od-PasswordField .ms-TextField .ms-TextField-fieldGroup {
+    height: auto;
+  }
+  .od-ShareHint .od-ShareHint-shimmer {
+    border-color: transparent !important;
+    background-image: linear-gradient(to right, #616161 0, #8b8b8b 50%, #616161 100%);
+    background-color: #616161;
+  }
+  .od-ShareHint .od-ShareHint-shimmer .od-ShareHint-iconHolder-shimmer svg {
+    fill: #202020 !important;
+  }
+  .od-ShareHint .od-ShareHint-shimmer .od-ShareHint-text-shimmer {
+    border-color: #202020 !important;
+  }
+  .od-PermissionsPivot-emptySection {
+    color: inherit;
+  }
+  .od-SharePrincipal2,
+  .od-PermissionsPivot-dropdown div[role=tablist].ms-FocusZone,
+  .od-PermissionsPivot-pivot div[role=tablist].ms-FocusZone {
+    border-color: #424242;
+  }
+}
+@-moz-document domain("onedrive.live.com") {
   #O365_NavHeader {
-    background-color: var(--globalColorGrey4);
+    background-color: #121212;
   }
   #O365_NavHeader .o365cs-base,
   #O365_NavHeader .o365sx-appName,
@@ -177,28 +301,28 @@
   #O365_NavHeader .o365cs-base:hover,
   #O365_NavHeader .o365sx-appName:hover,
   #O365_NavHeader .o365sx-waffle:hover {
-    background-color: var(--globalColorGrey14);
+    background-color: #242424;
   }
   #O365_NavHeader .o365sx-activeButton {
-    background-color: var(--globalColorGrey17);
+    background-color: #2c2c2c;
   }
   #O365_NavHeader .o365sx-searchBoxInactive,
   #O365_NavHeader .o365sx-searchBoxActive {
-    color: var(--globalColorGrey26);
-    background-color: var(--globalColorGrey94);
+    color: #424242;
+    background-color: #f0f0f0;
   }
   #O365_UniversalMeContainer:hover {
-    background-color: var(--globalColorGrey14);
+    background-color: #242424;
   }
   #mectrl_main_body,
   .mectrl_body,
   #mectrl_body_signOut {
-    background-color: var(--globalColorGrey7);
-    color: var(--text-light1);
+    background-color: #1a1a1a;
+    color: #ebebeb;
   }
   .mectrl_accountList,
   #mectrl_body_signOut:hover {
-    background-color: var(--globalColorGrey14);
+    background-color: #242424;
   }
   [id^='ms-searchux-popup-'],
   [id^='ms-searchux-popup-'] #file,
@@ -206,49 +330,49 @@
   [id^='ms-searchux-popup-'] ul[class^='group-'] > li,
   [id^='ms-searchux-popup-'] [class^='suggestionContainer-'],
   [id^='ms-searchux-popup-'] [class^='submitSuggestion-'] {
-    color: var(--globalColorGrey50) !important;
-    background-color: var(--globalColorGrey17);
+    color: #7d7d7d !important;
+    background-color: #2c2c2c;
   }
   [id^='ms-searchux-popup-'] [class^='noWrap-'] {
-    color: var(--globalColorGrey50) !important;
+    color: #7d7d7d !important;
   }
   [id^='ms-searchux-popup-'] [class^='suggestionContainer-']:hover,
   [id^='ms-searchux-popup-'] [class^='submitSuggestion-']:hover {
-    background-color: var(--globalColorGrey26);
+    background-color: #424242;
   }
   [id^='ms-searchux-popup-'] [class^='suggestionIconWrapper-'],
   [id^='ms-searchux-popup-'] [class^='suggestionIconWrapper-'] [class^='icon-'] {
-    color: var(--globalColorGrey96);
+    color: #f5f5f5;
   }
   #spartan-left-nav,
   [class^='navGroup_'],
   [class^='quotaBarHeader_'] {
-    color: var(--text-light1) !important;
+    color: #ebebeb !important;
   }
   #spartan-left-nav.odsp-spartan-nav-expanded {
-    background-color: var(--globalColorGrey14);
+    background-color: #202020;
   }
   [class^='navLink_'] {
-    color: var(--text-light1);
+    color: #ebebeb;
   }
   [class^='navLink_']:hover::before,
   [class^='navLink_']:hover [class^='navLinkInner_'] {
-    background-color: var(--globalColorGrey26) !important;
+    background-color: #424242 !important;
   }
   [class^='navLink_']:hover a {
-    color: var(--text-light1) !important;
+    color: #ebebeb !important;
   }
   #appLauncher .o365sx-neutral-foreground-background,
   #appLauncher .o365sx-neutral-foreground-hover-background:hover {
-    background-color: var(--globalColorGrey4);
+    background-color: #121212;
   }
   #appLauncher .o365sx-neutral-light-background,
   #appLauncher .o365cs-base .o365sx-neutral-light-hover-background:hover {
-    background-color: var(--globalColorGrey17);
+    background-color: #2c2c2c;
   }
   #appLauncher .o365sx-neutral-dark-font,
   #appLauncher .o365sx-neutral-dark-hover-font:hover {
-    color: var(--text-light1);
+    color: #ebebeb;
   }
   #appLauncher [id^='O365_AppTile_']:hover,
   #appLauncher [id^='intentTile_']:hover,
@@ -256,37 +380,37 @@
   #appLauncher [id^='intentTile_']:hover .o365sx-neutral-foreground-background,
   #appLauncher [id^='O365_AppTile_']:hover .o365sx-neutral-foreground-hover-background:hover,
   #appLauncher [id^='intentTile_']:hover .o365sx-neutral-foreground-hover-background:hover {
-    border-color: var(--globalColorGrey17) !important;
-    background-color: var(--globalColorGrey14) !important;
+    border-color: #2c2c2c !important;
+    background-color: #242424 !important;
     box-shadow: none !important;
   }
   #appLauncher [id^='O365_AppTile_']:active,
   #appLauncher [id^='intentTile_']:active {
-    border-color: var(--globalColorGrey20) !important;
-    background-color: var(--globalColorGrey17);
+    border-color: #333333 !important;
+    background-color: #2c2c2c;
   }
   #appLauncher #appLauncherSearchWrapper:hover::before {
     color: transparent;
   }
   #appLauncher #appLauncherSearchWrapper:focus-within::before {
-    color: var(--colorCompoundBrandStroke);
+    color: #0f6cbd;
   }
   #O365fpcontainerid,
   #flexPaneScrollRegion,
   #flexPaneScrollRegion > div,
   #FlexPane_Settings {
-    color: var(--text-light2) !important;
-    background-color: var(--globalColorGrey7) !important;
-    border-color: var(--globalColorGrey4) !important;
+    color: #bdbdbd !important;
+    background-color: #1a1a1a !important;
+    border-color: #121212 !important;
   }
   #O365fpcontainerid .o365sx-neutral-accent-link,
   #flexPaneScrollRegion .o365sx-neutral-accent-link,
   #flexPaneScrollRegion > div .o365sx-neutral-accent-link,
   #FlexPane_Settings .o365sx-neutral-accent-link {
-    color: var(--text-light2) !important;
+    color: #bdbdbd !important;
   }
   #flexPaneCloseButton {
-    color: var(--text-light2) !important;
+    color: #bdbdbd !important;
   }
   #flexPaneCloseButton:hover {
     background-color: rgba(0, 0, 0, 0.2) !important;
@@ -294,23 +418,33 @@
   .od-DetailsPane,
   .ms-ScrollablePane,
   .ms-ScrollablePane--contentContainer {
-    color: var(--text-light2) !important;
-    background-color: var(--globalColorGrey10) !important;
+    color: #bdbdbd !important;
+    background-color: #202020 !important;
   }
   [class^='od-DetailsPane-'] {
-    background-color: var(--globalColorGrey10) !important;
-    color: var(--text-light2) !important;
+    background-color: #202020 !important;
+    color: #bdbdbd !important;
   }
   [class^='od-DetailsPane-'][class*='-header'] {
-    background-color: var(--globalColorGrey7) !important;
+    background-color: #1a1a1a !important;
   }
-  .InfoPane-section {
-    background-color: var(--globalColorGrey10) !important;
-    color: var(--text-light2) !important;
+  .od-DetailsPaneWrapper {
+    border-color: #121212 !important;
+  }
+  .InfoPane-section,
+  [class^='od-FolderCoverTile-item'] {
+    background-color: #202020 !important;
+    color: #bdbdbd !important;
+  }
+  .od-FolderCoverTile-image {
+    background-color: #616161 !important;
   }
   .od-SharingSection-PermissionsPile {
-    background-color: var(--globalColorGrey10) !important;
-    color: var(--text-light2) !important;
+    background-color: #202020 !important;
+    color: #bdbdbd !important;
+  }
+  .ms-DetailsList {
+    --colorNeutralBackground1: #121212 !important;
   }
   .ms-DetailsList,
   .ms-DetailsList .ms-DetailsHeader,
@@ -318,139 +452,106 @@
   .ms-DetailsList .ms-DetailsRow,
   .ms-DetailsList .ms-Shimmer-container,
   .ms-DetailsList .ms-Shimmer-container * {
-    color: var(--text-light1) !important;
-    background-color: var(--globalColorGrey4) !important;
+    color: #ebebeb !important;
+    background-color: #121212 !important;
     border-color: #333 !important;
   }
-  .ms-DetailsList:hover,
-  .ms-DetailsList .ms-DetailsHeader:hover,
-  .ms-DetailsList .ms-DetailsHeader-cell:hover,
-  .ms-DetailsList .ms-DetailsRow:hover,
-  .ms-DetailsList .ms-Shimmer-container:hover,
-  .ms-DetailsList .ms-Shimmer-container *:hover {
+  .ms-DetailsList .ms-DetailsHeader-cell:hover {
     box-shadow: none !important;
   }
-  .ms-DetailsList .ms-DetailsRow:hover,
-  .ms-DetailsList .ms-DetailsRow.is-selected {
-    box-shadow: var(--globalColorGrey4) !important;
-    --od3-row-divider: var(--globalColorGrey4) !important;
+  .ms-DetailsList .ms-DetailsRow:hover:not(.is-selected)::before {
+    background-color: #242424;
   }
-  .ms-DetailsList .ms-DetailsRow:hover::before,
-  .ms-DetailsList .ms-DetailsRow.is-selected::before {
-    background-color: var(--globalColorGrey14) !important;
+  .ms-DetailsRow-cell [class*='nameField_'] {
+    color: #ebebeb !important;
   }
   .ms-DetailsRow-cell [class*='fieldText_'],
-  .ms-DetailsRow-cell [class*='nameField_'] {
-    color: var(--text-light1) !important;
+  .ms-DetailsRow-cell [class*='sharedFieldRender_'] {
+    color: #8b8b8b;
   }
   .odsp-spartan-list,
   .odsp-spartan-list [class*='odlistContent_'],
   .odsp-spartan-list [class*='odlistHeaderRow_'],
   .odsp-spartan-list [class*='row_'] {
-    background-color: var(--globalColorGrey4) !important;
+    background-color: #121212 !important;
     border-color: #333 !important;
   }
-  .od-ItemActivityList-activity {
-    color: var(--text-light2) !important;
-    background-color: var(--globalColorGrey4) !important;
+  .od-ItemActivityList-activity,
+  .od-ItemActivityFeed-noActivities {
+    color: #bdbdbd !important;
+    background-color: #121212 !important;
+  }
+  .od-ItemActivity-item-focusZone {
+    --buttonHoverBackgroundAlpha: rgba(255, 255, 255, 0.07) !important;
   }
   .od-ItemActivity-item-nameText,
   .od-ItemActivity-item-textContent {
-    color: var(--text-light3) !important;
+    color: #8b8b8b !important;
+  }
+  .od-itemActivity-commentActivity-commentContent {
+    color: #bdbdbd !important;
   }
   [class^='actionRow_'] [data-id='filterPivot'] button:active {
-    background-color: var(--colorBrandBackground2Pressed);
+    background-color: #115ea3;
   }
   [class^='carouselTopNav_'] {
     background-color: transparent !important;
   }
   [class^='navButton_'],
   [class^='navButton_'] .ms-Icon {
-    color: var(--text-light2);
-    background-color: var(--globalColorGrey7);
+    color: #bdbdbd;
+    background-color: #1a1a1a;
   }
   [class^='navButton_']:hover:not(:disabled),
   [class^='navButton_']:hover:not(:disabled) .ms-Icon {
-    color: var(--text-light1);
-    background-color: var(--globalColorGrey4);
+    color: #ebebeb;
+    background-color: #121212;
   }
   [class^='navButton_']:disabled {
     opacity: 0.45;
-    color: var(--text-light1);
-    background-color: var(--globalColorGrey7);
+    color: #ebebeb;
+    background-color: #1a1a1a;
   }
-  .ms-Button {
-    color: var(--text-light1) !important;
+  .isOD3 .is-selected [class*='heroButton_']:hover:not(:disabled) {
+    background-color: var(--buttonHoverBackgroundAlpha);
   }
-  .ms-Button:hover,
-  .ms-Button:hover .ms-Button-menuIcon {
-    color: var(--text-light1) !important;
-  }
-  .ms-Button[class*='heroButton_']:hover:not(.is-disabled),
-  .ms-Button.od-DetailsPane-PrimaryPane-header-close:hover:not(.is-disabled) {
-    background-color: var(--colorNeutralBackgroundAlpha3Hover) !important;
+  .od-Caption-textField {
+    background-color: transparent !important;
   }
   .od-Dialog-content {
-    color: var(--text-light2) !important;
-    background-color: var(--globalColorGrey20) !important;
+    color: #bdbdbd !important;
+    background-color: #333333 !important;
   }
   .od-Dialog-title {
-    color: var(--text-light1) !important;
+    color: #ebebeb !important;
   }
   .od-Dialog-button {
-    color: var(--text-light2) !important;
+    color: #bdbdbd !important;
   }
   .od-Dialog-button:hover,
   .od-Dialog-button:active {
     background-color: rgba(0, 0, 0, 0.2) !important;
   }
-  .ms-Breadcrumb-item,
-  .ms-Breadcrumb-itemLink {
-    color: var(--text-light1) !important;
-  }
-  .ms-Breadcrumb-chevron {
-    color: var(--text-light3) !important;
-  }
   [class^='commandBar_'][class*='hasSelection_'] .ms-CommandBar,
   [class^='commandBar_'][class*='hasSelection_'] [class^='commandbar_'] {
-    background-color: var(--globalColorGrey4) !important;
+    background-color: #121212 !important;
   }
   [class^='commandBar_'][class*='hasSelection_'] .ms-CommandBar .ms-Button:hover:not(.is-disabled) > .ms-Button-flexContainer,
   [class^='commandBar_'][class*='hasSelection_'] [class^='commandbar_'] .ms-Button:hover:not(.is-disabled) > .ms-Button-flexContainer {
-    background-color: var(--globalColorGrey10) !important;
+    background-color: #202020 !important;
   }
   [class^='carouselList_'] [class^='tileViewport_'] {
-    background-color: var(--globalColorGrey4);
+    background-color: #121212;
   }
   [class^='carouselList_'] [class^='tileViewport_'] [class^='itemActivity_'] * {
-    color: var(--text-light1) !important;
-  }
-  .ms-Callout,
-  .ms-Callout-beak,
-  .ms-Callout-main,
-  .ms-ContextualMenu,
-  .ms-ContextualMenu-link {
-    color: var(--text-light2) !important;
-    background-color: var(--globalColorGrey7);
-  }
-  .ms-ContextualMenu-itemText {
-    color: var(--text-light2) !important;
-  }
-  .ms-ContextualMenu-link:hover {
-    background-color: var(--globalColorGrey14) !important;
-  }
-  .ms-ContextualMenu-checkmarkIcon {
-    color: var(--text-light1) !important;
-  }
-  .ms-ContextualMenu-divider {
-    background-color: var(--globalColorGrey26);
+    color: #ebebeb !important;
   }
   [class*='iconClassName-'] {
-    color: var(--text-light1) !important;
+    color: #ebebeb !important;
   }
   [class*='sortIcon-'],
   [class*='filterChevron-'] {
-    color: var(--text-light3) !important;
+    color: #8b8b8b !important;
   }
   .isOD3 .StorageOptions.StorageOptions--cards,
   .isOD3 .StorageOptions.StorageOptions--slider,
@@ -462,18 +563,18 @@
   .od-StorageAddOnTileContainer,
   .od-StorageAddOnTileContainer .header,
   .od-StorageAddOnTileContainer .description {
-    color: var(--text-light2) !important;
+    color: #bdbdbd !important;
   }
   .od-PlanCardTest,
   .od-PlanCardTest-secondaryHeader,
   .od-PostPurchasePlansPage-featureListHeader,
   .od-PlanCardTest-featureListItemText {
-    color: var(--text-light2) !important;
-    background-color: var(--globalColorGrey4) !important;
+    color: #bdbdbd !important;
+    background-color: #121212 !important;
   }
   .od-PostPurchasePlansPage-listBlock,
   .od-PlanCardTest-titleSeparator {
-    border-color: var(--globalColorGrey17) !important;
+    border-color: #2c2c2c !important;
   }
   .od-PlanCardTest-appsIncluded {
     color: var(--colorBrandForegroundLink) !important;
@@ -481,13 +582,13 @@
   .od-StorageAddOnTileContainer .storageAddOnTile,
   .od-StorageAddOnTileContainer .storageAddOnTile .price,
   .od-StorageAddOnTileContainer .storageAddOnTile .description {
-    color: var(--text-light2) !important;
-    background-color: var(--globalColorGrey4) !important;
+    color: #bdbdbd !important;
+    background-color: #121212 !important;
   }
   .od-StorageAddOnTileContainer .storageAddOnTile .line {
-    background-color: var(--globalColorGrey17);
+    background-color: #2c2c2c;
   }
   .od-StorageAddOnTileContainer .disclaimer {
-    color: var(--text-light3) !important;
+    color: #8b8b8b !important;
   }
 }

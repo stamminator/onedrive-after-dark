@@ -2,170 +2,109 @@
 @name         OneDrive After Dark
 @description  Finely tuned UserCSS dark theme for the OneDrive web app
 @namespace    https://github.com/stamminator
-@version      20240328.0
+@version      20240329.0
 @author       stamminator
 ==/UserStyle== */
 
-@-moz-document domain("onedrive.live.com"), domain("photos.onedrive.com") {
-    
-}
 
-@-moz-document domain("onedrive.live.com") {
-    
+
+@colorBrand40: #0c3b5e;
+@colorBrand60: #0f548c;
+@colorBrand70: #115ea3;
+@colorBrand80: #0f6cbd;
+@colorBrand90: #2886de;
+@colorBrand100: #479ef5;
+@colorBrand130: #96c6fa;
+@colorBrand140: #b4d6fa;
+@colorBrand150: #cfe4fa;
+@colorBrand160: #ebf3fc;
+@colorGrey4: #121212;  // us
+@colorGrey7: #1a1a1a;  // us
+@colorGrey10: #202020; // us
+@colorGrey14: #242424;
+@colorGrey17: #2c2c2c; // us
+@colorGrey20: #333333;
+@colorGrey26: #424242;
+@colorGrey38: #616161;
+@colorGrey44: #707070;
+@colorGrey50: #7d7d7d; // us
+@colorGrey55: #8b8b8b; // us
+@colorGrey60: #989898; // us
+@colorGrey65: #a6a6a6; // us
+@colorGrey70: #b3b3b3;
+@colorGrey74: #bdbdbd;
+@colorGrey78: #c7c7c7;
+@colorGrey82: #d1d1d1;
+@colorGrey84: #d6d6d6;
+@colorGrey88: #e0e0e0;
+@colorGrey92: #ebebeb;
+@colorGrey94: #f0f0f0;
+@colorGrey96: #f5f5f5;
+@colorGrey98: #fafafa;
+@colorBlackAlpha10: #0000001a;
+@colorBlack: #000000;
+@colorWhite: #ffffff;
+@colorWhiteAlpha70: #ffffffb3;
+@colorLightBlueTint30: #83bdeb;
+@colorCranberryTint40: #eeacb2;
+@colorCranberryTint60: #fdf3f4;
+
+@colorNeutralBackground6: #ffffff33;
+@colorNeutralBackground7: #ffffff4d;
+@colorNeutralBackground8: #ffffff66;
+@colorNeutralBackground9: #7c55ce0f;
+
+@colorNeutralBackground10: #28abf503;
+@colorNeutralBackground11: #0000000a;
+@colorNeutralBackground12: #0000000c;
+@colorNeutralBackground13: #00000028;
+@colorNeutralBackground14: #00000014;
+@colorNeutralBackground15: #d2d5d6;
+@colorNeutralBackground16: #c9c6d0;
+@colorNeutralBackground17: #cecbd5;
+@colorNeutralBackground18: #cdd0d1;
+@colorNeutralBackground19: #e0e0e057;
+
+@colorNeutralBackgroundAlpha3Hover: rgba(0, 0, 0, 0.25);
+
+@colorCompoundBrandStroke: @colorBrand80;
+
+@colorBrandBackground2Pressed: @colorBrand70;
+
+@text-light1: @colorGrey92;
+@text-light2: @colorGrey74;
+@text-light3: @colorGrey55;
+
+@-moz-document domain("onedrive.live.com"), domain("photos.onedrive.com"), url-prefix("https://www.odwebp.svc.ms/share")
+{
     body {
-        color: var(--text-light1) !important;
+        color: @text-light1 !important;
     }
 
     h1, h2, h3, h4, h5, h6 {
-        color: var(--text-light1) !important;
+        color: @text-light1 !important;
     }
 
     dt {
-        color: var(--text-light3) !important;
+        color: @text-light3 !important;
     }
 
     dd {
-        color: var(--text-light2) !important;
+        color: @text-light2 !important;
     }
 
     :root, * {
-        --us-bg: #202020;
-        --text-light1: var(--globalColorGrey92);
-        --text-light2: var(--globalColorGrey74);
-        --text-light3: var(--globalColorGrey55);
-
-        --globalColorBrand40: #0c3b5e;
-        --globalColorBrand60: #0f548c;
-        --globalColorBrand70: #115ea3;
-        --globalColorBrand80: #0f6cbd;
-        --globalColorBrand90: #2886de;
-        --globalColorBrand100: #479ef5;
-        --globalColorBrand130: #96c6fa;
-        --globalColorBrand140: #b4d6fa;
-        --globalColorBrand150: #cfe4fa;
-        --globalColorBrand160: #ebf3fc;
-        --globalColorGrey4: #121212;  // us
-        --globalColorGrey7: #1a1a1a;  // us
-        --globalColorGrey10: #202020; // us
-        --globalColorGrey14: #242424;
-        --globalColorGrey17: #2c2c2c; // us
-        --globalColorGrey20: #333333;
-        --globalColorGrey26: #424242;
-        --globalColorGrey38: #616161;
-        --globalColorGrey44: #707070;
-        --globalColorGrey50: #7d7d7d; // us
-        --globalColorGrey55: #8b8b8b; // us
-        --globalColorGrey60: #989898; // us
-        --globalColorGrey65: #a6a6a6; // us
-        --globalColorGrey70: #b3b3b3;
-        --globalColorGrey74: #bdbdbd;
-        --globalColorGrey78: #c7c7c7;
-        --globalColorGrey82: #d1d1d1;
-        --globalColorGrey84: #d6d6d6;
-        --globalColorGrey88: #e0e0e0;
-        --globalColorGrey92: #ebebeb;
-        --globalColorGrey94: #f0f0f0;
-        --globalColorGrey96: #f5f5f5;
-        --globalColorGrey98: #fafafa;
-        --globalColorBlackAlpha10: #0000001a;
-        --globalColorBlack: #000000;
-        --globalColorWhite: #ffffff;
-        --globalColorWhiteAlpha70: #ffffffb3;
-        --globalColorLightBlueTint30: #83bdeb;
-        --globalColorCranberryTint40: #eeacb2;
-        --globalColorCranberryTint60: #fdf3f4;
-
-        --borderRadiusCircular: 10000px;
-        --borderRadiusLarge: 6px;
-        --borderRadiusMedium: 4px;
-        --borderRadiusSmall: 2px;
-        --borderRadiusXLarge: 8px;
-        --colorBrandBackground: var(--globalColorBrand80);
-        --colorBrandBackground2: var(--globalColorBrand60);
-        --colorBrandBackground2Hover: var(--globalColorBrand40);
-        --colorBrandBackground2Pressed: var(--globalColorBrand70);
-        --colorBrandBackgroundHover: var(--globalColorBrand70);
-        --colorBrandBackgroundInvertedPressed: var(--globalColorBrand140);
-        --colorBrandForeground1: var(--globalColorBrand80);
-        --colorBrandForegroundLink: var(--globalColorBrand70);
-        --colorBrandForegroundLinkHover: var(--globalColorBrand60);
-        --colorBrandForegroundLinkPressed: var(--globalColorBrand40);
-        --colorBrandForegroundLinkSelected: var(--globalColorBrand80);
-        --colorCompoundBrandForeground1: var(--globalColorBrand80);
-        --colorCompoundBrandForeground1Hover: var(--globalColorBrand70);
-        --colorCompoundBrandForeground1Pressed: var(--globalColorBrand60);
-        --colorCompoundBrandStroke: var(--globalColorBrand80);
-        --colorCompoundBrandStrokeHover: var(--globalColorBrand70);
-        --colorCompoundBrandStrokePressed: var(--globalColorBrand60);
-        --colorNeutralBackground1: var(--globalColorWhite);
-        --colorNeutralBackground10: #28abf503;
-        --colorNeutralBackground11: #0000000a;
-        --colorNeutralBackground12: #0000000c;
-        --colorNeutralBackground13: #00000028;
-        --colorNeutralBackground14: #00000014;
-        --colorNeutralBackground15: #d2d5d6;
-        --colorNeutralBackground16: #c9c6d0;
-        --colorNeutralBackground17: #cecbd5;
-        --colorNeutralBackground18: #cdd0d1;
-        --colorNeutralBackground19: #e0e0e057;
-        --colorNeutralBackground1Hover: var(--globalColorGrey96);
-        --colorNeutralBackground1Pressed: var(--globalColorGrey88);
-        --colorNeutralBackground2: var(--globalColorGrey98);
-        --colorNeutralBackground3: var(--globalColorGrey96);
-        --colorNeutralBackground3Hover: var(--globalColorGrey20);
-        --colorNeutralBackground3Pressed: var(--globalColorGrey84);
-        --colorNeutralBackground4: var(--globalColorGrey94);
-        --colorNeutralBackground5: var(--globalColorGrey92);
-        --colorNeutralBackground5Hover: var(--globalColorGrey96);
-        --colorNeutralBackground5Pressed: var(--globalColorGrey94);
-        --colorNeutralBackground6: #ffffff33;
-        --colorNeutralBackground7: #ffffff4d;
-        --colorNeutralBackground8: #ffffff66;
-        --colorNeutralBackground9: #7c55ce0f;
-        --colorNeutralBackgroundAlpha3Hover: rgba(0, 0, 0, 0.2);
-        --colorNeutralBackgroundDisabled: var(--globalColorGrey94);
-        --colorNeutralBackgroundStatic: var(--globalColorGrey20);
-        --colorNeutralDarkBackgroundAlpha3Pressed: var(--globalColorBlackAlpha10);
-        --colorNeutralForeground1: var(--globalColorGrey98);
-        --colorNeutralForeground2: var(--globalColorGrey78);
-        --colorNeutralForeground2BrandHover: var(--globalColorBrand80);
-        --colorNeutralForeground2BrandPressed: var(--globalColorBrand90);
-        --colorNeutralForeground2Hover: var(--globalColorGrey14);
-        --colorNeutralForeground2Pressed: var(--globalColorGrey14);
-        --colorNeutralForeground3: var(--globalColorGrey38);
-        --colorNeutralForeground3Hover: var(--globalColorGrey26);
-        --colorNeutralForeground4: var(--globalColorGrey44);
-        --colorNeutralForegroundDisabled: var(--globalColorGrey74);
-        --colorNeutralForegroundInverted: var(--globalColorWhite);
-        --colorNeutralForegroundInvertedLink: var(--globalColorWhite);
-        --colorNeutralForegroundOnBrand: var(--globalColorWhite);
-        --colorNeutralStroke1: var(--globalColorGrey82);
-        --colorNeutralStroke1Hover: var(--globalColorGrey78);
-        --colorNeutralStroke1Pressed: var(--globalColorGrey70);
-        --colorNeutralStroke2: var(--globalColorGrey88);
-        --colorNeutralStroke3: var(--globalColorGrey94);
-        --colorNeutralStrokeAccessibleSelected: var(--globalColorBrand80);
-        --colorNeutralStrokeDisabled: var(--globalColorGrey88);
-        --colorStrokeFocus2: var(--globalColorBlack);
-        --colorStrokeFocus3: #0000000d;
-        --colorSubtleBackgroundLightAlphaHover: var(--globalColorWhiteAlpha70);
-        --colorTransparentBackground: transparent;
-        --colorTransparentStroke: transparent;
-        --fontSizeBase100: 10px;
-        --fontSizeBase200: 12px;
-        --fontSizeBase300: 14px;
-        --fontSizeBase400: 16px;
-        --fontSizeBase500: 20px;
-        --fontWeightRegular: 400;
-        --fontWeightSemibold: 600;
-        --lineHeightBase300: 20px;
-        --lineHeightBase500: 28px;
+        //--colorBrandBackground2Pressed: fade(@colorBrand100, 50%);
+        --colorBrandForegroundLinkSelected: @colorBrand80;
+        --colorNeutralBackgroundAlpha3Hover: @colorNeutralBackgroundAlpha3Hover;
+        --colorNeutralForeground1: @text-light1;
+        --colorNeutralForeground2: @text-light2;
 
         --od3-row-divider: #333 !important;
-        --od3-row-inset-background: var(--globalColorGrey14) !important;
+        --od3-row-inset-background: fade(@colorBrand90, 25%) !important;
 
-        --ms-palette-neutralPrimary: var(--text-light1);
-        --ms-semanticColors-bodyBackground: var(--globalColorGrey10);
+        --ms-palette-neutralPrimary: @text-light1;
+        --ms-semanticColors-bodyBackground: @colorGrey10;
     }
 
     :root,
@@ -176,9 +115,373 @@
         --pageBackgroundGradientColorStop3: rgb(28, 28, 28);
     }
 
+    :root {
+        // My variables
+        --buttonHoverBackgroundAlpha: fade(#000, 25%) ; // override to white + alpha when background is too dark
+    }
+
+    /////////////////////////////////
+    // MICROSOFT COMMON COMPONENTS //
+    /////////////////////////////////
+
+    // Buttons
+    .ms-Button {
+        &, i {
+            color: @text-light1 !important;
+        }
+
+        &:hover {
+            &,
+            .ms-Button-menuIcon {
+                color: @text-light1 !important;
+            }
+
+            &:not(.is-disabled) {
+                background-color: var(--buttonHoverBackgroundAlpha);
+            }
+        }
+
+        &.ms-Button--command,
+        &.ms-Button--commandBar
+        {
+            &:hover {
+                background-color: transparent !important;
+            }
+        }
+
+        &.ms-Button--default {
+            color: @text-light2;
+            background-color: transparent !important;
+            border-color: @colorGrey65 !important;
+
+            &:hover {
+                background-color: var(--buttonHoverBackgroundAlpha) !important;
+            }
+        }
+
+        &.ms-Button--primary {
+            &:hover {
+                background-color: #106EBE !important;
+            }
+        }
+    }
+
+
+    // Text fields
+    .ms-TextField
+    {
+        background-color: @colorGrey94 !important;
+        color: @colorBlack !important;
+    }
+
+    .ms-TextField-fieldGroup,
+    input.ms-TextField-field,
+    textarea.ms-TextField-field,
+    .ms-BasePicker-input
+    {
+        background-color: @colorGrey92 !important;
+        color: @colorBlack !important;
+        border-radius: 4px;
+
+        &::placeholder {
+            color: @colorGrey44 !important;
+        }
+    }
+
+
+    // Dialogs
+    .ms-Dialog-main,
+    .ms-Dialog-content,
+    .ms-Dialog-subText
+    {
+        color: @text-light2 !important;
+        background-color: @colorGrey20 !important;
+    }
+
+    .ms-Dialog-title
+    {
+        color: @text-light1 !important;
+    }
+
+    .ms-Dialog-button
+    {
+        color: @text-light2 !important;
+
+        &:hover,
+        &:active {
+            background-color: var(--buttonHoverBackgroundAlpha) !important;
+        }
+    }
+
+
+    // Pivot (tabs)
+    .ms-Pivot-link:hover {
+        background-color: @colorBlackAlpha10;
+    }
+
+
+    // Breadcrumbs
+    .ms-Breadcrumb-item,
+    .ms-Breadcrumb-itemLink {
+        color: @text-light1 !important;
+    }
+
+    .ms-Breadcrumb-chevron {
+        color: @text-light3 !important;
+    }
+
+
+    // Suggestions
+    .ms-Suggestions-item,
+    .ms-Suggestions-itemButton
+    {
+        color: @text-light2;
+        background-color: @colorGrey17;
+
+        &:hover {
+            background-color: @colorGrey14 !important;
+        }
+
+        &.is-suggested {
+            background-color: @colorGrey10 !important;
+        }
+
+        .ms-Persona-primaryText:hover {
+            // when persona is inside a suggestion list, don't indicate clickability on label
+            color: @text-light1;
+        }
+    }
+
+
+    // Dropdowns
+    .ms-Dropdown-item {
+        color: @text-light2;
+        background-color: @colorGrey17;
+
+        &:hover {
+            background-color: @colorGrey14 !important;
+        }
+    }
+
+
+    // Persona
+    .ms-PickerPersona-container {
+        color: @text-light2;
+        background-color: @colorGrey7;
+        border: 1px solid @colorGrey20;
+
+        &:hover {
+            cursor: pointer;
+            background-color: @colorGrey4;
+        }
+
+        &.is-selected {
+            &, &:hover {
+                background-color: @colorGrey4;
+                border-color: var(--colorBrandForegroundLink);
+            }
+        }
+
+        .ms-PickerItem-content.ms-Button--icon:hover {
+            background-color: @colorGrey20;
+        }
+    }
+
+    .ms-Persona-primaryText {
+        color: @text-light1;
+        &:hover {
+            color: @text-light1;
+        }
+    }
+
+    .ms-Persona-secondaryText {
+        color: @text-light2;
+    }
+
+    .ms-Persona-tertiaryText {
+        color: @text-light3;
+    }
+
+
+    // Callout (context menu)
+    .ms-Callout,
+    .ms-Callout-beak,
+    .ms-Callout-beakCurtain,
+    .ms-Callout-main,
+    .ms-ContextualMenu,
+    .ms-ContextualMenu-link
+    {
+        color: @text-light2 !important;
+        background-color: @colorGrey7 !important;
+        border-color: @colorGrey14;
+    }
+
+    .ms-ContextualMenu-itemText {
+        color: @text-light2 !important;
+    }
+
+    .ms-ContextualMenu-secondaryText {
+        color: @text-light3 !important;
+    }
+
+    .ms-ContextualMenu-link {
+        &:hover {
+            background-color: @colorGrey14 !important;
+        }
+
+        .ms-ContextualMenu-icon {
+            color: inherit;
+        }
+    }
+
+    .ms-ContextualMenu-checkmarkIcon {
+        color: @text-light1 !important;
+    }
+
+    .ms-ContextualMenu-divider {
+        background-color: @colorGrey26;
+    }
+
+
+    // Tooltips
+    .ms-Tooltip-content,
+    .ms-Tooltip-subText {
+        color: @text-light2 !important;
+    }
+
+
+    // Datepicker callout
+    .ms-DatePicker
+    {
+        background-color: @colorGrey7;
+
+        [class*='monthAndYear-'] {
+            color: @text-light2;
+        }
+
+        [class*='monthComponents-'] button {
+            color: @text-light2;
+
+            &:hover {
+                background-color: @colorGrey14;
+            }
+
+            &[class*='disabledStyle'] {
+                color: @colorGrey26;
+            }
+        }
+
+        [class*='dayCell-'] {
+            color: @text-light1;
+
+            &.ms-CalendarDay-hoverStyle {
+                background-color: @colorGrey20;
+            }
+
+            &[class*='daySelected-'] {
+                background-color: @colorGrey20 !important;
+                border-color: @colorGrey98;
+            }
+        }
+
+        [class*='dayOutsideBounds-'] {
+            button {
+                color: @colorGrey38;
+            }
+        }
+
+        // usability improvements
+        th[class*='dayCell-'] {
+            cursor: default;
+            border-bottom: 1px solid @colorGrey50;
+        }
+    }
+
+    
+}
+
+
+@-moz-document url-prefix("https://www.odwebp.svc.ms/share")
+{
+    // Sharing iframe
+    #odc-share-root,
+    .od-Share,
+    .od-ShareMain-section
+    {
+        background-color: @colorGrey10 !important;
+        color: @text-light2 !important;
+    }
+
+    .od-ShareHintDetail-statusText {
+        &, * {
+            color: var(--colorNeutralForegroundInvertedLink) !important;
+        }
+    }
+    
+    .od-RoleSelectorCompact-permissionButton {
+        background-color: inherit;
+        color: inherit;
+    }
+
+    .od-ShareLinkDescription-label {
+        color: @text-light2 !important;
+    }
+
+    .od-ShareLinkDescription-detailText {
+        color: @text-light3 !important;
+    }
+
+    .od-ExpirationDatePicker-delete {
+        color: @text-light2;
+    }
+
+    .od-RoleSelectorLarge-rolesDropdown .ms-Dropdown-title,
+    .od-ExpirationDatePicker-content,
+    .od-PasswordField .od-ShareLink-passwordFieldContent
+    {
+        border-bottom-color: transparent;
+    }
+
+    .od-PasswordField .ms-TextField {
+        padding: 0;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .od-PasswordField .ms-TextField .ms-TextField-fieldGroup {
+        height: auto;
+    }
+
+    .od-ShareHint .od-ShareHint-shimmer {
+        border-color: transparent !important;
+        background-image: linear-gradient(to right, @colorGrey38 0, @colorGrey55 50%, @colorGrey38 100%);
+        background-color: @colorGrey38;
+
+        .od-ShareHint-iconHolder-shimmer svg {
+            fill: @colorGrey10 !important;
+        }
+
+        .od-ShareHint-text-shimmer {
+            border-color: @colorGrey10 !important;
+        }
+    }
+
+    .od-PermissionsPivot-emptySection {
+        color: inherit;
+    }
+
+    .od-SharePrincipal2,
+    .od-PermissionsPivot-dropdown div[role=tablist].ms-FocusZone,
+    .od-PermissionsPivot-pivot div[role=tablist].ms-FocusZone {
+        border-color: @colorGrey26;
+    }
+}
+
+@-moz-document domain("onedrive.live.com")
+{   
     // Header
     #O365_NavHeader {
-        background-color: var(--globalColorGrey4);
+        background-color: @colorGrey4;
         
         .o365cs-base,
         .o365sx-appName,
@@ -186,36 +489,36 @@
             color: var(--globalColorGrey88);
 
             &:hover {
-                background-color: var(--globalColorGrey14);
+                background-color: @colorGrey14;
             }
         }
 
         .o365sx-activeButton {
-            background-color: var(--globalColorGrey17);
+            background-color: @colorGrey17;
         }
 
         .o365sx-searchBoxInactive,
         .o365sx-searchBoxActive {
-            color: var(--globalColorGrey26);
-            background-color: var(--globalColorGrey94);
+            color: @colorGrey26;
+            background-color: @colorGrey94;
         }
     }
 
     #O365_UniversalMeContainer:hover {
-        background-color: var(--globalColorGrey14);
+        background-color: @colorGrey14;
     }
 
     #mectrl_main_body,
     .mectrl_body,
     #mectrl_body_signOut 
     {
-        background-color: var(--globalColorGrey7);
-        color: var(--text-light1)
+        background-color: @colorGrey7;
+        color: @text-light1
     }
 
     .mectrl_accountList,
     #mectrl_body_signOut:hover {
-        background-color: var(--globalColorGrey14);
+        background-color: @colorGrey14;
     }
 
     // Popup search
@@ -228,26 +531,26 @@
         [class^='suggestionContainer-'],
         [class^='submitSuggestion-']
         {
-            color: var(--globalColorGrey50) !important;
-            background-color: var(--globalColorGrey17);
+            color: @colorGrey50 !important;
+            background-color: @colorGrey17;
         }
 
         [class^='noWrap-'] {
-            color: var(--globalColorGrey50) !important;
+            color: @colorGrey50 !important;
         }
 
         [class^='suggestionContainer-'],
         [class^='submitSuggestion-']
         {
             &:hover {
-                background-color: var(--globalColorGrey26);
+                background-color: @colorGrey26;
             }
         }
 
         [class^='suggestionIconWrapper-'] {
             &,
             [class^='icon-'] {
-                color: var(--globalColorGrey96);
+                color: @colorGrey96;
             }
         }
 
@@ -261,24 +564,24 @@
     //[class^='navIcon_'],
     [class^='quotaBarHeader_']
     {
-        color: var(--text-light1) !important;
+        color: @text-light1 !important;
     }
 
     #spartan-left-nav.odsp-spartan-nav-expanded {
-        background-color: var(--globalColorGrey14);
+        background-color: @colorGrey10;
     }
 
     [class^='navLink_'] {
-        color: var(--text-light1);
+        color: @text-light1;
 
         &:hover {
             &::before,
             [class^='navLinkInner_'] {
-                background-color: var(--globalColorGrey26) !important;
+                background-color: @colorGrey26 !important;
             }
 
             a {
-                color: var(--text-light1) !important;
+                color: @text-light1 !important;
             }
         }
     }
@@ -287,17 +590,17 @@
     #appLauncher {
         .o365sx-neutral-foreground-background, 
         .o365sx-neutral-foreground-hover-background:hover {
-            background-color: var(--globalColorGrey4);
+            background-color: @colorGrey4;
         }
 
         .o365sx-neutral-light-background,
         .o365cs-base .o365sx-neutral-light-hover-background:hover {
-            background-color: var(--globalColorGrey17);
+            background-color: @colorGrey17;
         }
 
         .o365sx-neutral-dark-font,
         .o365sx-neutral-dark-hover-font:hover {
-            color: var(--text-light1);
+            color: @text-light1;
         }
 
         [id^='O365_AppTile_'],
@@ -307,15 +610,15 @@
                 &,
                 .o365sx-neutral-foreground-background,
                 .o365sx-neutral-foreground-hover-background:hover {
-                    border-color: var(--globalColorGrey17) !important;
-                    background-color: var(--globalColorGrey14) !important;
+                    border-color: @colorGrey17 !important;
+                    background-color: @colorGrey14 !important;
                     box-shadow: none !important;
                 }
             }
             
             &:active {
-                border-color: var(--globalColorGrey20) !important;
-                background-color: var(--globalColorGrey17);
+                border-color: @colorGrey20 !important;
+                background-color: @colorGrey17;
             }
         }
 
@@ -325,7 +628,7 @@
             }
 
             &:focus-within::before {
-                color: var(--colorCompoundBrandStroke)
+                color: @colorCompoundBrandStroke
             }
         }
     }
@@ -336,17 +639,17 @@
     #flexPaneScrollRegion,
     #flexPaneScrollRegion > div,
     #FlexPane_Settings {
-        color: var(--text-light2) !important;
-        background-color: var(--globalColorGrey7) !important;
-        border-color: var(--globalColorGrey4) !important;
+        color: @text-light2 !important;
+        background-color: @colorGrey7 !important;
+        border-color: @colorGrey4 !important;
 
         .o365sx-neutral-accent-link {
-            color: var(--text-light2) !important;
+            color: @text-light2 !important;
         }
     }
 
     #flexPaneCloseButton {
-        color: var(--text-light2) !important;
+        color: @text-light2 !important;
 
         &:hover {
             background-color: rgba(0, 0, 0, 0.2) !important;
@@ -359,35 +662,47 @@
     .ms-ScrollablePane,
     .ms-ScrollablePane--contentContainer
     {
-        color: var(--text-light2) !important;
-        background-color: var(--globalColorGrey10) !important;
+        color: @text-light2 !important;
+        background-color: @colorGrey10 !important;
     }
 
     [class^='od-DetailsPane-'] {
-        background-color: var(--globalColorGrey10) !important;
-        color: var(--text-light2) !important;
+        background-color: @colorGrey10 !important;
+        color: @text-light2 !important;
 
         &[class*='-header'] {
-            background-color: var(--globalColorGrey7) !important;
+            background-color: @colorGrey7 !important;
         }
     }
 
-    .InfoPane-section {
-        background-color: var(--globalColorGrey10) !important;
-        color: var(--text-light2) !important;
+    .od-DetailsPaneWrapper {
+        border-color: @colorGrey4 !important;
+    }
+
+    .InfoPane-section,
+    [class^='od-FolderCoverTile-item']
+    {
+        background-color: @colorGrey10 !important;
+        color: @text-light2 !important;
+    }
+
+    .od-FolderCoverTile-image {
+        background-color: @colorGrey38 !important;
     }
 
 
     // Sharing section
     .od-SharingSection-PermissionsPile {
-        background-color: var(--globalColorGrey10) !important;
-        color: var(--text-light2) !important;
+        background-color: @colorGrey10 !important;
+        color: @text-light2 !important;
     }
 
 
     // Lists
     .ms-DetailsList 
     {
+        --colorNeutralBackground1: @colorGrey4 !important;
+
         &,
         .ms-DetailsHeader,
         .ms-DetailsHeader-cell,
@@ -395,32 +710,35 @@
         .ms-Shimmer-container,
         .ms-Shimmer-container *
         {
-            color: var(--text-light1) !important;
-            background-color: var(--globalColorGrey4) !important;
+            color: @text-light1 !important;
+            background-color: @colorGrey4 !important;
             border-color: #333 !important;
+        }
 
-            &:hover {
-                box-shadow: none !important;
-            }
+        .ms-DetailsHeader-cell:hover {
+            box-shadow: none !important;
         }
 
         .ms-DetailsRow {
             //border-image: linear-gradient(to right, transparent 56px, #333 56px, #333 calc(100% - 8px), transparent calc(100% - 8px)) 0 0 1 / 1 / 0 stretch;
-            &:hover, &.is-selected {
-                box-shadow: var(--globalColorGrey4) !important;
-                --od3-row-divider: var(--globalColorGrey4) !important;
-
+            &:hover:not(.is-selected)
+            {
                 &::before {
-                    background-color: var(--globalColorGrey14) !important;
+                    background-color: @colorGrey14;
                 }
             }
         }
     }
 
     .ms-DetailsRow-cell {
-        [class*='fieldText_'],
         [class*='nameField_'] {
-            color: var(--text-light1) !important;
+            color: @text-light1 !important;
+        }
+
+        [class*='fieldText_'],
+        [class*='sharedFieldRender_'] 
+        {
+            color: @text-light3;
         }
     }
 
@@ -430,25 +748,34 @@
         [class*='odlistHeaderRow_'],
         [class*='row_']
         {
-            background-color: var(--globalColorGrey4) !important;
+            background-color: @colorGrey4 !important;
             border-color: #333 !important;
         }
     }
 
-    .od-ItemActivityList-activity {
-        color: var(--text-light2) !important;
-        background-color: var(--globalColorGrey4) !important;
+    .od-ItemActivityList-activity,
+    .od-ItemActivityFeed-noActivities {
+        color: @text-light2 !important;
+        background-color: @colorGrey4 !important;
+    }
+
+    .od-ItemActivity-item-focusZone {
+        --buttonHoverBackgroundAlpha: fade(#fff, 7%) !important;
     }
 
     .od-ItemActivity-item-nameText,
     .od-ItemActivity-item-textContent {
-        color: var(--text-light3) !important;
+        color: @text-light3 !important;
+    }
+
+    .od-itemActivity-commentActivity-commentContent {
+        color: @text-light2 !important;
     }
 
 
     // Buttons
     [class^='actionRow_'] [data-id='filterPivot'] button:active {
-        background-color: var(--colorBrandBackground2Pressed);
+        background-color: @colorBrandBackground2Pressed;
     }
 
     [class^='carouselTopNav_'] {
@@ -458,72 +785,67 @@
     [class^='navButton_'] {
         &,
         .ms-Icon {
-            color: var(--text-light2);
-            background-color: var(--globalColorGrey7);
+            color: @text-light2;
+            background-color: @colorGrey7;
         }
 
         &:hover:not(:disabled) {
             &,
             .ms-Icon {
-                color: var(--text-light1);
-                background-color: var(--globalColorGrey4);
+                color: @text-light1;
+                background-color: @colorGrey4;
             }
         }
 
         &:disabled {
             opacity: 0.45;
-            color: var(--text-light1);
-            background-color: var(--globalColorGrey7);
+            color: @text-light1;
+            background-color: @colorGrey7;
         }
     }
 
-    .ms-Button {
-        color: var(--text-light1) !important;
-
-        &:hover {
-            &,
-            .ms-Button-menuIcon {
-                color: var(--text-light1) !important;
-            }
-        }
-
-        &[class*='heroButton_'],
-        &.od-DetailsPane-PrimaryPane-header-close {
-            &:hover:not(.is-disabled) {
-                background-color: var(--colorNeutralBackgroundAlpha3Hover) !important;
-            }
-        }
+    .isOD3 .is-selected [class*='heroButton_']:hover:not(:disabled) {
+        background-color: var(--buttonHoverBackgroundAlpha);
     }
 
 
-    // Dialogs
-    .od-Dialog-content {
-        color: var(--text-light2) !important;
-        background-color: var(--globalColorGrey20) !important;
+    // Text fields
+    // .od-addNewCommentTextField-mentionableTextBox-outer,
+    // .od-addNewCommentTextField-mentionableTextBox
+    // {
+    //     background-color: @colorGrey26 !important;
+    //     color: @text-light1 !important;
+    // }
+
+    // .od-addNewCommentTextField-mentionableTextBox[placeholder]:empty:before {
+    //     color: @text-light2 !important;
+    // }
+
+    .od-Caption-textField {
+        background-color: transparent !important;
     }
 
-    .od-Dialog-title {
-        color: var(--text-light1) !important;
+
+    // Dialogs (see Microsoft Common Components section for similarities)
+    .od-Dialog-content
+    {
+        color: @text-light2 !important;
+        background-color: @colorGrey20 !important;
     }
 
-    .od-Dialog-button {
-        color: var(--text-light2) !important;
+    .od-Dialog-title
+    {
+        color: @text-light1 !important;
+    }
+
+    .od-Dialog-button
+    {
+        color: @text-light2 !important;
 
         &:hover,
         &:active {
             background-color: rgba(0, 0, 0, 0.2) !important;
         }
-    }
-
-
-    // Breadcrumbs
-    .ms-Breadcrumb-item,
-    .ms-Breadcrumb-itemLink {
-        color: var(--text-light1) !important;
-    }
-
-    .ms-Breadcrumb-chevron {
-        color: var(--text-light3) !important;
     }
 
 
@@ -533,11 +855,11 @@
         .ms-CommandBar, 
         [class^='commandbar_']
         {
-            background-color: var(--globalColorGrey4) !important;
+            background-color: @colorGrey4 !important;
     
             .ms-Button:hover:not(.is-disabled) {
                 > .ms-Button-flexContainer {
-                    background-color: var(--globalColorGrey10) !important;
+                    background-color: @colorGrey10 !important;
                 }
             }
         }
@@ -548,56 +870,23 @@
     // Carousel
     [class^='carouselList_'] [class^='tileViewport_']
     {
-        background-color: var(--globalColorGrey4);
+        background-color: @colorGrey4;
 
         [class^='itemActivity_'] * {
-            color: var(--text-light1) !important;
+            color: @text-light1 !important;
         }
-    }
-
-
-    // Callout (context menu)
-    .ms-Callout,
-    .ms-Callout-beak,
-    .ms-Callout-main,
-    .ms-ContextualMenu,
-    .ms-ContextualMenu-link
-    {
-        color: var(--text-light2) !important;
-        background-color: var(--globalColorGrey7);
-    }
-
-    .ms-ContextualMenu-itemText {
-        color: var(--text-light2) !important;
-    }
-
-    .ms-ContextualMenu-link:hover
-    {
-        background-color: var(--globalColorGrey14) !important;
-
-        .ms-ContextualMenu-itemText {
-            //color: var(--text-light2) !important;
-        }
-    }
-
-    .ms-ContextualMenu-checkmarkIcon {
-        color: var(--text-light1) !important;
-    }
-
-    .ms-ContextualMenu-divider {
-        background-color: var(--globalColorGrey26);
     }
 
 
     // Miscellaneous Icons
     [class*='iconClassName-'] {
-        color: var(--text-light1) !important;
+        color: @text-light1 !important;
     }
 
     [class*='sortIcon-'],
     [class*='filterChevron-']
     {
-        color: var(--text-light3) !important;
+        color: @text-light3 !important;
     }
 
 
@@ -613,7 +902,7 @@
     .od-StorageAddOnTileContainer .header,
     .od-StorageAddOnTileContainer .description
     {
-        color: var(--text-light2) !important;
+        color: @text-light2 !important;
     }
 
     .od-PlanCardTest,
@@ -621,13 +910,13 @@
     .od-PostPurchasePlansPage-featureListHeader,
     .od-PlanCardTest-featureListItemText
     {
-        color: var(--text-light2) !important;
-        background-color: var(--globalColorGrey4) !important;
+        color: @text-light2 !important;
+        background-color: @colorGrey4 !important;
     }
 
     .od-PostPurchasePlansPage-listBlock,
     .od-PlanCardTest-titleSeparator  {
-        border-color: var(--globalColorGrey17) !important;
+        border-color: @colorGrey17 !important;
     }
 
     .od-PlanCardTest-appsIncluded {
@@ -639,17 +928,17 @@
             &,
             .price,
             .description {
-                color: var(--text-light2) !important;
-                background-color: var(--globalColorGrey4) !important;
+                color: @text-light2 !important;
+                background-color: @colorGrey4 !important;
             }
 
             .line {
-                background-color: var(--globalColorGrey17);
+                background-color: @colorGrey17;
             }
         }
 
         .disclaimer {
-            color: var(--text-light3) !important;
+            color: @text-light3 !important;
         }
     }
 
