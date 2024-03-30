@@ -7,4 +7,13 @@ Please report any issues via the GitHub issues page.
 Known missing dark theme coverage:
 
 - photos.onedrive.com
-- The header bar area while viewing a file's contents
+- Options page
+- The toolbar bar area while viewing a file's contents
+- Move/copy files dialog
+- Progress pane
+- Edit Tags pane
+
+Known smaller issues:
+- Button icons appearing white instead of accent color
+- Tiles view needs improvement
+- Placeholder loading elements when resorting files appear bright
